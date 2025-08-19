@@ -26,8 +26,13 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);
 
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/token").authenticated() // Basic Auth here
-                .anyRequest().authenticated() // JWT for others
+                .requestMatchers("/api/auth/token").authenticated() // Basic auth to fetch token
+                .requestMatchers(
+                        "/swagger-ui/**",
+                        "/v3/api-docs/**",
+                        "/swagger-ui.html"
+                ).permitAll()
+                .anyRequest().authenticated() // Jwt for all other endpoints
         );
 
         http.httpBasic(basic -> {
