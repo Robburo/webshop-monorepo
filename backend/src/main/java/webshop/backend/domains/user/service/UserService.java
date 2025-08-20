@@ -4,7 +4,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import webshop.backend.domains.user.User;
-import webshop.backend.domains.user.dto.UserDto;
+import webshop.backend.domains.user.dto.UserRequestDto;
+import webshop.backend.domains.user.dto.UserResponseDto;
 import webshop.backend.domains.user.mapper.UserMapper;
 import webshop.backend.domains.user.repository.UserRepository;
 
@@ -22,32 +23,32 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public UserDto getCurrentUser() {
+    public UserResponseDto getCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        return UserMapper.toDto(user);
+        return UserMapper.toResponseDto(user);
     }
 
-    public List<UserDto> getAllUsers() {
+    public List<UserResponseDto> getAllUsers() {
         return userRepository.findAll()
                 .stream()
-                .map(UserMapper::toDto)
+                .map(UserMapper::toResponseDto)
                 .collect(Collectors.toList());
     }
 
-    public UserDto getUserById(Long id) {
+    public UserResponseDto getUserById(Long id) {
         return userRepository.findById(id)
-                .map(UserMapper::toDto)
+                .map(UserMapper::toResponseDto)
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    public UserDto registerUser(UserDto dto, String rawPassword) {
-        User user = new User();
-        user.setUsername(dto.username());
-        user.setEmail(dto.email());
-        user.setPassword(passwordEncoder.encode(rawPassword));
-        user.setRole(dto.role() != null ? dto.role() : "ROLE_USER");
-        return UserMapper.toDto(userRepository.save(user));
+    public UserResponseDto registerUser(UserRequestDto dto) {
+        User user = UserMapper.toEntity(dto, passwordEncoder);
+        user.setPassword(passwordEncoder.encode(dto.password()));
+        if (user.getRole() == null || user.getRole().isEmpty()) {
+            user.setRole("ROLE_USER");
+        }
+        return UserMapper.toResponseDto(userRepository.save(user));
     }
 }

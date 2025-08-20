@@ -1,6 +1,6 @@
 package webshop.backend.domains.user.dto;
 
-public record UserDto(
+public record UserResponseDto(
         Long id,
         String username,
         String email,
