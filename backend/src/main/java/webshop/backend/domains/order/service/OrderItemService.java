@@ -1,6 +1,7 @@
 package webshop.backend.domains.order.service;
 
 import org.springframework.stereotype.Service;
+import webshop.backend.common.exception.OrderItemNotFoundException;
 import webshop.backend.domains.order.dto.OrderItemDto;
 import webshop.backend.domains.order.repository.OrderItemRepository;
 
@@ -37,6 +38,6 @@ public class OrderItemService {
                         item.getQuantity(),
                         item.getPrice()
                 ))
-                .orElseThrow(() -> new RuntimeException("Order item not found"));
+                .orElseThrow(() -> new OrderItemNotFoundException(id));
     }
 }

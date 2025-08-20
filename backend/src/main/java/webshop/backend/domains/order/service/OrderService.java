@@ -2,6 +2,9 @@ package webshop.backend.domains.order.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import webshop.backend.common.exception.EmptyCartException;
+import webshop.backend.common.exception.OrderNotFoundException;
+import webshop.backend.common.exception.UserNotFoundException;
 import webshop.backend.domains.cart_item.CartItem;
 import webshop.backend.domains.cart_item.repository.CartItemRepository;
 import webshop.backend.domains.order.Order;
@@ -43,11 +46,11 @@ public class OrderService {
     public OrderDto checkout() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException(username));
 
         List<CartItem> cartItems = cartItemRepository.findByUserId(user.getId());
         if (cartItems.isEmpty()) {
-            throw new RuntimeException("Cart is empty");
+            throw new EmptyCartException();
         }
 
         Order order = new Order();
@@ -71,13 +74,16 @@ public class OrderService {
 
         cartItemRepository.deleteAll(cartItems);
 
-        return OrderMapper.toDto(orderRepository.findById(order.getId()).get());
+        Order finalOrder = order;
+        return orderRepository.findById(order.getId())
+                .map(OrderMapper::toDto)
+                .orElseThrow(() -> new OrderNotFoundException(finalOrder.getId()));
     }
 
     public List<OrderDto> getOrdersForCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException(username));
         return orderRepository.findByUserId(user.getId())
                 .stream()
                 .map(OrderMapper::toDto)
@@ -87,12 +93,12 @@ public class OrderService {
     public OrderDto getOrderById(Long id) {
         return orderRepository.findById(id)
                 .map(OrderMapper::toDto)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new OrderNotFoundException(id));
     }
 
     public OrderDto updateOrderStatus(Long id, String status) {
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new OrderNotFoundException(id));
         order.setStatus(status);
         return OrderMapper.toDto(orderRepository.save(order));
     }

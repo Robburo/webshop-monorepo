@@ -2,6 +2,9 @@ package webshop.backend.domains.cart_item.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import webshop.backend.common.exception.CartItemNotFoundException;
+import webshop.backend.common.exception.ProductNotFoundException;
+import webshop.backend.common.exception.UserNotFoundException;
 import webshop.backend.domains.cart_item.CartItem;
 import webshop.backend.domains.cart_item.dto.CartItemCreateDto;
 import webshop.backend.domains.cart_item.dto.CartItemResponseDto;
@@ -30,35 +33,51 @@ public class CartItemService {
 
     public List<CartItemResponseDto> getCartItemsForCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
-        return cartItemRepository.findByUserId(user.getId()).stream().map(CartItemMapper::toResponseDto).collect(Collectors.toList());
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(username));
+
+        return cartItemRepository.findByUserId(user.getId())
+                .stream()
+                .map(CartItemMapper::toResponseDto)
+                .collect(Collectors.toList());
     }
 
     public CartItemResponseDto addToCart(CartItemCreateDto dto) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(username));
 
-        Product product = productRepository.findById(dto.productId()).orElseThrow(() -> new RuntimeException("Product not found"));
+        Product product = productRepository.findById(dto.productId())
+                .orElseThrow(() -> new ProductNotFoundException(dto.productId()));
+
         CartItem item = new CartItem();
         item.setUser(user);
         item.setProduct(product);
         item.setQuantity(dto.quantity());
+
         return CartItemMapper.toResponseDto(cartItemRepository.save(item));
     }
 
     public CartItemResponseDto updateCartItem(Long itemId, int quantity) {
-        CartItem item = cartItemRepository.findById(itemId).orElseThrow(() -> new RuntimeException("Cart item not found"));
+        CartItem item = cartItemRepository.findById(itemId)
+                .orElseThrow(() -> new CartItemNotFoundException(itemId));
+
         item.setQuantity(quantity);
         return CartItemMapper.toResponseDto(cartItemRepository.save(item));
     }
 
     public void removeCartItem(Long itemId) {
+        if (!cartItemRepository.existsById(itemId)) {
+            throw new CartItemNotFoundException(itemId);
+        }
         cartItemRepository.deleteById(itemId);
     }
 
     public void clearCart() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(username));
+
         List<CartItem> cartItems = cartItemRepository.findByUserId(user.getId());
         cartItemRepository.deleteAll(cartItems);
     }
