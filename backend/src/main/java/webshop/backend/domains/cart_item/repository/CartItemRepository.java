@@ -1,7 +1,7 @@
-package webshop.backend.domains.cart.repository;
+package webshop.backend.domains.cart_item.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import webshop.backend.domains.cart.CartItem;
+import webshop.backend.domains.cart_item.CartItem;
 
 import java.util.List;
 

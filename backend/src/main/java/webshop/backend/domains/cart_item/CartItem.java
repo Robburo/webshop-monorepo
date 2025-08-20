@@ -1,4 +1,4 @@
-package webshop.backend.domains.cart;
+package webshop.backend.domains.cart_item;
 
 import jakarta.persistence.*;
 import lombok.*;

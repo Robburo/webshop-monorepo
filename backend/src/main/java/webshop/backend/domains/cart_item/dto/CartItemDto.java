@@ -1,4 +1,4 @@
-package webshop.backend.domains.cart.dto;
+package webshop.backend.domains.cart_item.dto;
 
 public record CartItemDto(
         Long id,

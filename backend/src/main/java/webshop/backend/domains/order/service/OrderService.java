@@ -2,8 +2,8 @@ package webshop.backend.domains.order.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import webshop.backend.domains.cart.CartItem;
-import webshop.backend.domains.cart.repository.CartItemRepository;
+import webshop.backend.domains.cart_item.CartItem;
+import webshop.backend.domains.cart_item.repository.CartItemRepository;
 import webshop.backend.domains.order.Order;
 import webshop.backend.domains.order.OrderItem;
 import webshop.backend.domains.order.dto.OrderDto;

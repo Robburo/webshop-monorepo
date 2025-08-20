@@ -1,11 +1,11 @@
-package webshop.backend.domains.cart.mapper;
+package webshop.backend.domains.cart_item.mapper;
 
-import webshop.backend.domains.cart.CartItem;
-import webshop.backend.domains.cart.dto.CartItemDto;
+import webshop.backend.domains.cart_item.CartItem;
+import webshop.backend.domains.cart_item.dto.CartItemResponseDto;
 
-public class CartMapper {
-    public static CartItemDto toDto(CartItem item) {
-        return new CartItemDto(
+public class CartItemMapper {
+    public static CartItemResponseDto toResponseDto(CartItem item) {
+        return new CartItemResponseDto(
                 item.getId(),
                 item.getProduct() != null ? item.getProduct().getId() : null,
                 item.getProduct() != null ? item.getProduct().getName() : null,
