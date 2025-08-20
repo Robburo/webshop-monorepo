@@ -4,7 +4,8 @@ import org.springframework.stereotype.Service;
 import webshop.backend.domains.category.Category;
 import webshop.backend.domains.category.repository.CategoryRepository;
 import webshop.backend.domains.product.Product;
-import webshop.backend.domains.product.dto.ProductDto;
+import webshop.backend.domains.product.dto.ProductRequestDto;
+import webshop.backend.domains.product.dto.ProductResponseDto;
 import webshop.backend.domains.product.mapper.ProductMapper;
 import webshop.backend.domains.product.repository.ProductRepository;
 
@@ -22,22 +23,41 @@ public class ProductService {
         this.categoryRepository = categoryRepository;
     }
 
-    public List<ProductDto> getAllProducts() {
-        return productRepository.findAll().stream().map(ProductMapper::toDto).collect(Collectors.toList());
+    public List<ProductResponseDto> getAllProducts() {
+        return productRepository.findAll().stream()
+                .map(ProductMapper::toResponseDto)
+                .collect(Collectors.toList());
     }
 
-    public ProductDto getProductById(Long id) {
-        return productRepository.findById(id).map(ProductMapper::toDto).orElseThrow(() -> new RuntimeException("Product not found"));
+    public ProductResponseDto getProductById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        return ProductMapper.toResponseDto(product);
     }
 
-    public ProductDto createProduct(ProductDto dto) {
-        Product product = new Product();
-        return fillProductFields(dto, product);
+    public ProductResponseDto createProduct(ProductRequestDto dto) {
+        Category category = null;
+        if (dto.categoryId() != null) {
+            category = categoryRepository.findById(dto.categoryId())
+                    .orElseThrow(() -> new RuntimeException("Category not found"));
+        }
+        Product product = ProductMapper.toEntity(dto, category);
+        return ProductMapper.toResponseDto(productRepository.save(product));
     }
 
-    public ProductDto updateProduct(Long id, ProductDto dto) {
-        Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
-        return fillProductFields(dto, product);
+    public ProductResponseDto updateProduct(Long id, ProductRequestDto dto) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        Category category = null;
+        if (dto.categoryId() != null) {
+            category = categoryRepository.findById(dto.categoryId())
+                    .orElseThrow(() -> new RuntimeException("Category not found"));
+        }
+
+        ProductMapper.updateEntity(product, dto, category);
+
+        return ProductMapper.toResponseDto(productRepository.save(product));
     }
 
     public void deleteProduct(Long id) {
@@ -45,17 +65,5 @@ public class ProductService {
             throw new RuntimeException("Product not found");
         }
         productRepository.deleteById(id);
-    }
-
-    private ProductDto fillProductFields(ProductDto dto, Product product) {
-        product.setName(dto.name());
-        product.setDescription(dto.description());
-        product.setPrice(dto.price());
-        product.setStock(dto.stock());
-        if (dto.categoryId() != null) {
-            Category category = categoryRepository.findById(dto.categoryId()).orElseThrow(() -> new RuntimeException("Category not found"));
-            product.setCategory(category);
-        }
-        return ProductMapper.toDto(productRepository.save(product));
     }
 }
