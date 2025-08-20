@@ -5,6 +5,7 @@ import lombok.*;
 import webshop.backend.domains.user.User;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,6 +27,6 @@ public class Order {
 
     private String status; // e.g. PENDING, PAID, SHIPPED
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> items;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> items = new ArrayList<>();
 }

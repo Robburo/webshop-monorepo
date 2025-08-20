@@ -52,4 +52,10 @@ public class UserService {
         }
         return UserMapper.toResponseDto(userRepository.save(user));
     }
+
+    public void deleteUser(Long id) {
+        userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id " + id));
+        userRepository.deleteById(id);
+    }
 }

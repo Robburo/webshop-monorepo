@@ -66,12 +66,14 @@ public class OrderService {
             orderItem.setProduct(product);
             orderItem.setQuantity(cartItem.getQuantity());
             orderItem.setPrice(product.getPrice());
-            orderItemRepository.save(orderItem);
+
+            order.getItems().add(orderItem);
 
             product.setStock(product.getStock() - cartItem.getQuantity());
             productRepository.save(product);
         }
 
+        order = orderRepository.save(order);
         cartItemRepository.deleteAll(cartItems);
 
         Order finalOrder = order;

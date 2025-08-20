@@ -5,7 +5,7 @@ import webshop.backend.domains.order.OrderItem;
 import webshop.backend.domains.order.dto.OrderDto;
 import webshop.backend.domains.order.dto.OrderItemDto;
 
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class OrderMapper {
     public static OrderDto toDto(Order order) {
@@ -14,7 +14,11 @@ public class OrderMapper {
                 order.getUser() != null ? order.getUser().getId() : null,
                 order.getCreatedAt(),
                 order.getStatus(),
-                order.getItems() != null ? order.getItems().stream().map(OrderMapper::toItemDto).collect(Collectors.toList()) : null
+                order.getItems() != null
+                        ? order.getItems().stream()
+                        .map(OrderMapper::toItemDto)
+                        .toList()
+                        : List.of()
         );
     }
 

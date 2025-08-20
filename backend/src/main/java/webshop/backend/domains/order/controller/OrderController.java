@@ -5,10 +5,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import webshop.backend.domains.order.dto.OrderCreateDto;
 import webshop.backend.domains.order.dto.OrderDto;
 import webshop.backend.domains.order.service.OrderService;
-import webshop.backend.domains.user.User;
 
 import java.util.List;
 
@@ -26,9 +24,7 @@ public class OrderController {
     @Operation(summary = "Checkout and create a new order")
     @ApiResponse(responseCode = "200", description = "Order created successfully")
     @PostMapping("/checkout")
-    public ResponseEntity<OrderDto> checkout(@RequestBody OrderCreateDto dto) {
-        // Replace with authenticated user context
-        User user = new User();
+    public ResponseEntity<OrderDto> checkout() {
         return ResponseEntity.ok(orderService.checkout());
     }
 
@@ -36,7 +32,6 @@ public class OrderController {
     @ApiResponse(responseCode = "200", description = "Orders retrieved successfully")
     @GetMapping
     public ResponseEntity<List<OrderDto>> getOrdersForUser() {
-        User user = new User();
         return ResponseEntity.ok(orderService.getOrdersForCurrentUser());
     }
 
