@@ -42,7 +42,8 @@ public class OrderService {
 
     public OrderDto checkout() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
         List<CartItem> cartItems = cartItemRepository.findByUserId(user.getId());
         if (cartItems.isEmpty()) {
@@ -64,12 +65,10 @@ public class OrderService {
             orderItem.setPrice(product.getPrice());
             orderItemRepository.save(orderItem);
 
-            // reduce stock
             product.setStock(product.getStock() - cartItem.getQuantity());
             productRepository.save(product);
         }
 
-        // clear cart after checkout
         cartItemRepository.deleteAll(cartItems);
 
         return OrderMapper.toDto(orderRepository.findById(order.getId()).get());
@@ -77,12 +76,17 @@ public class OrderService {
 
     public List<OrderDto> getOrdersForCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
-        return orderRepository.findByUserId(user.getId()).stream().map(OrderMapper::toDto).collect(Collectors.toList());
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return orderRepository.findByUserId(user.getId())
+                .stream()
+                .map(OrderMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public OrderDto getOrderById(Long id) {
-        return orderRepository.findById(id).map(OrderMapper::toDto)
+        return orderRepository.findById(id)
+                .map(OrderMapper::toDto)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
     }
 

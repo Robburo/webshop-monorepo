@@ -1,6 +1,7 @@
 package webshop.backend.domains.order.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,14 +24,17 @@ public class OrderItemController {
         this.orderItemService = orderItemService;
     }
 
+    @Operation(summary = "Get all items by order ID")
+    @ApiResponse(responseCode = "200", description = "Order items retrieved successfully")
     @GetMapping("/order/{orderId}")
-    @Operation(summary = "Get items by order", description = "Retrieve all items belonging to a specific order")
     public ResponseEntity<List<OrderItemDto>> getItemsByOrder(@PathVariable Long orderId) {
         return ResponseEntity.ok(orderItemService.getItemsByOrder(orderId));
     }
 
+
+    @Operation(summary = "Get an order item by ID")
+    @ApiResponse(responseCode = "200", description = "Order item retrieved successfully")
     @GetMapping("/{id}")
-    @Operation(summary = "Get order item by ID", description = "Retrieve a single order item by its ID")
     public ResponseEntity<OrderItemDto> getItemById(@PathVariable Long id) {
         return ResponseEntity.ok(orderItemService.getItemById(id));
     }

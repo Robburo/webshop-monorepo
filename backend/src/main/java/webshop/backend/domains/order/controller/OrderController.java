@@ -1,11 +1,14 @@
 package webshop.backend.domains.order.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import webshop.backend.domains.order.dto.OrderCreateDto;
 import webshop.backend.domains.order.dto.OrderDto;
 import webshop.backend.domains.order.service.OrderService;
+import webshop.backend.domains.user.User;
 
 import java.util.List;
 
@@ -20,26 +23,33 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+    @Operation(summary = "Checkout and create a new order")
+    @ApiResponse(responseCode = "200", description = "Order created successfully")
     @PostMapping("/checkout")
-    @Operation(summary = "Checkout current user's cart", description = "Creates a new order from the current user's cart.")
-    public ResponseEntity<OrderDto> checkout() {
+    public ResponseEntity<OrderDto> checkout(@RequestBody OrderCreateDto dto) {
+        // Replace with authenticated user context
+        User user = new User();
         return ResponseEntity.ok(orderService.checkout());
     }
 
+    @Operation(summary = "Get all orders for the current user")
+    @ApiResponse(responseCode = "200", description = "Orders retrieved successfully")
     @GetMapping
-    @Operation(summary = "Get all orders for current user", description = "Retrieves a list of all orders placed by the current user.")
-    public ResponseEntity<List<OrderDto>> getOrdersForCurrentUser() {
+    public ResponseEntity<List<OrderDto>> getOrdersForUser() {
+        User user = new User();
         return ResponseEntity.ok(orderService.getOrdersForCurrentUser());
     }
 
+    @Operation(summary = "Get an order by ID")
+    @ApiResponse(responseCode = "200", description = "Order retrieved successfully")
     @GetMapping("/{id}")
-    @Operation(summary = "Get order by ID", description = "Retrieves details of a specific order by its ID.")
     public ResponseEntity<OrderDto> getOrderById(@PathVariable Long id) {
         return ResponseEntity.ok(orderService.getOrderById(id));
     }
 
+    @Operation(summary = "Update the status of an order")
+    @ApiResponse(responseCode = "200", description = "Order status updated successfully")
     @PutMapping("/{id}/status")
-    @Operation(summary = "Update order status", description = "Updates the status of an order (e.g., PENDING, PAID, SHIPPED).")
     public ResponseEntity<OrderDto> updateOrderStatus(@PathVariable Long id, @RequestParam String status) {
         return ResponseEntity.ok(orderService.updateOrderStatus(id, status));
     }

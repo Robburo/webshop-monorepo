@@ -18,7 +18,7 @@ public class OrderMapper {
         );
     }
 
-    private static OrderItemDto toItemDto(OrderItem item) {
+    public static OrderItemDto toItemDto(OrderItem item) {
         return new OrderItemDto(
                 item.getId(),
                 item.getProduct() != null ? item.getProduct().getId() : null,
