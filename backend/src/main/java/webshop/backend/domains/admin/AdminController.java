@@ -5,6 +5,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import webshop.backend.domains.cart_item.dto.CartItemResponseDto;
+import webshop.backend.domains.cart_item.service.CartItemService;
 import webshop.backend.domains.user.dto.UserResponseDto;
 import webshop.backend.domains.user.service.UserService;
 
@@ -16,9 +18,11 @@ import java.util.List;
 public class AdminController {
 
     private final UserService userService;
+    private final CartItemService cartItemService;
 
-    public AdminController(UserService userService) {
+    public AdminController(UserService userService, CartItemService cartItemService) {
         this.userService = userService;
+        this.cartItemService = cartItemService;
     }
 
     @Operation(summary = "Get all users", description = "Accessible only for ADMIN role")
@@ -44,5 +48,12 @@ public class AdminController {
         // implement delete in UserService if missing
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Get all cart items", description = "Get cart items for all users")
+    @ApiResponse(responseCode = "200", description = "Cart items retrieved sucessfully")
+    @GetMapping("/cart_items")
+    public ResponseEntity<List<CartItemResponseDto>> getAllCartItems() {
+        return ResponseEntity.ok(cartItemService.getAllCartItems());
     }
 }
