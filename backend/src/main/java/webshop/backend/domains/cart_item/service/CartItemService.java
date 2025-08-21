@@ -31,6 +31,13 @@ public class CartItemService {
         this.userRepository = userRepository;
     }
 
+    public List<CartItemResponseDto> getAllCartItems() {
+        return cartItemRepository.findAll()
+                .stream()
+                .map(CartItemMapper::toResponseDto)
+                .collect(Collectors.toList());
+    }
+
     public List<CartItemResponseDto> getCartItemsForCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByUsername(username)
