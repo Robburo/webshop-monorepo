@@ -37,11 +37,6 @@ public class TodoList {
     // - Use soft deletes where appropriate (e.g., orders)
     // - Index frequently queried columns (username, orderId, productId)
 
-    // TODO: Documentation
-    // - Swagger/OpenAPI annotations on all endpoints
-    // - Group endpoints by domain (User, Product, Order, Cart, Admin)
-    // - Generate OpenAPI spec and commit to repo
-
     // TODO: Performance & Caching
     // - Add caching for product/category read endpoints (Spring Cache + caffeine or Redis)
     // - Add pagination on all list endpoints (products, orders, cart items, etc.)
