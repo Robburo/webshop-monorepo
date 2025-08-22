@@ -2,6 +2,7 @@ package webshop.backend.domains.admin;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import webshop.backend.domains.user.service.UserService;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -29,6 +31,7 @@ public class AdminController {
     @ApiResponse(responseCode = "200", description = "Users retrieved successfully")
     @GetMapping("/users")
     public ResponseEntity<List<UserResponseDto>> getAllUsers() {
+        log.debug("GET /api/admin/users called by ADMIN");
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
@@ -37,6 +40,7 @@ public class AdminController {
     @ApiResponse(responseCode = "404", description = "User not found")
     @GetMapping("/users/{id}")
     public ResponseEntity<UserResponseDto> getUserById(@PathVariable Long id) {
+        log.debug("GET /api/admin/users/{} called by ADMIN", id);
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
@@ -45,15 +49,16 @@ public class AdminController {
     @ApiResponse(responseCode = "404", description = "User not found")
     @DeleteMapping("/users/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        // implement delete in UserService if missing
+        log.debug("DELETE /api/admin/users/{} called by ADMIN", id);
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
 
     @Operation(summary = "Get all cart items", description = "Get cart items for all users")
-    @ApiResponse(responseCode = "200", description = "Cart items retrieved sucessfully")
+    @ApiResponse(responseCode = "200", description = "Cart items retrieved successfully")
     @GetMapping("/cart_items")
     public ResponseEntity<List<CartItemResponseDto>> getAllCartItems() {
+        log.debug("GET /api/admin/cart_items called by ADMIN");
         return ResponseEntity.ok(cartItemService.getAllCartItems());
     }
 }

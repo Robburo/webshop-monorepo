@@ -1,5 +1,6 @@
 package webshop.backend.domains.user.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import webshop.backend.domains.user.repository.UserRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class UserService {
 
@@ -26,36 +28,59 @@ public class UserService {
 
     public UserResponseDto getCurrentUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        log.debug("Fetching current user with username={}", username);
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UserNotFoundException("User not found: " + username));
+                .orElseThrow(() -> {
+                    log.warn("User not found: {}", username);
+                    return new UserNotFoundException("User not found: " + username);
+                });
+        log.info("Successfully fetched current user with id={}", user.getId());
         return UserMapper.toResponseDto(user);
     }
 
     public List<UserResponseDto> getAllUsers() {
-        return userRepository.findAll()
+        log.debug("Fetching all users");
+        List<UserResponseDto> users = userRepository.findAll()
                 .stream()
                 .map(UserMapper::toResponseDto)
                 .collect(Collectors.toList());
+        log.info("Fetched {} users", users.size());
+        return users;
     }
 
     public UserResponseDto getUserById(Long id) {
+        log.debug("Fetching user with id={}", id);
         return userRepository.findById(id)
-                .map(UserMapper::toResponseDto)
-                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+                .map(user -> {
+                    log.info("User found with id={}", id);
+                    return UserMapper.toResponseDto(user);
+                })
+                .orElseThrow(() -> {
+                    log.warn("User not found with id={}", id);
+                    return new UserNotFoundException("User not found with id: " + id);
+                });
     }
 
     public UserResponseDto registerUser(UserRequestDto dto) {
+        log.debug("Registering new user with username={}", dto.username());
         User user = UserMapper.toEntity(dto, passwordEncoder);
         user.setPassword(passwordEncoder.encode(dto.password()));
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("ROLE_USER");
         }
-        return UserMapper.toResponseDto(userRepository.save(user));
+        User saved = userRepository.save(user);
+        log.info("Registered new user with id={} and username={}", saved.getId(), saved.getUsername());
+        return UserMapper.toResponseDto(saved);
     }
 
     public void deleteUser(Long id) {
+        log.debug("Deleting user with id={}", id);
         userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("User not found with id " + id));
+                .orElseThrow(() -> {
+                    log.warn("User not found for deletion with id={}", id);
+                    return new UserNotFoundException("User not found with id " + id);
+                });
         userRepository.deleteById(id);
+        log.info("Deleted user with id={}", id);
     }
 }
