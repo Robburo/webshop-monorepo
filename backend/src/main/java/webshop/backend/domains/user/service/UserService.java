@@ -4,7 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import webshop.backend.common.exception.UserDeletionNotAllowedException;
 import webshop.backend.common.exception.UserNotFoundException;
+import webshop.backend.domains.cart_item.repository.CartItemRepository;
+import webshop.backend.domains.order.repository.OrderRepository;
 import webshop.backend.domains.user.User;
 import webshop.backend.domains.user.dto.UserRequestDto;
 import webshop.backend.domains.user.dto.UserResponseDto;
@@ -20,10 +23,14 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final CartItemRepository cartItemRepository;
+    private final OrderRepository orderRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, CartItemRepository cartItemRepository, OrderRepository orderRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.cartItemRepository = cartItemRepository;
+        this.orderRepository = orderRepository;
     }
 
     public UserResponseDto getCurrentUser() {
@@ -75,12 +82,27 @@ public class UserService {
 
     public void deleteUser(Long id) {
         log.debug("Deleting user with id={}", id);
-        userRepository.findById(id)
+
+        var user = userRepository.findById(id)
                 .orElseThrow(() -> {
                     log.warn("User not found for deletion with id={}", id);
                     return new UserNotFoundException("User not found with id " + id);
                 });
-        userRepository.deleteById(id);
+
+        // Check for existing references before deleting
+        boolean hasCartItems = cartItemRepository.existsByUserId(id);
+        if (hasCartItems) {
+            log.warn("Cannot delete user with id={} because it still has cart items", id);
+            throw new UserDeletionNotAllowedException("Cannot delete user with id=" + id + " because it has related cart items");
+        }
+
+        boolean hasOrders = orderRepository.existsByUserId(id);
+        if (hasOrders) {
+            log.warn("Cannot delete user with id={} because it still has orders", id);
+            throw new UserDeletionNotAllowedException("Cannot delete user with id=" + id + " because it has related orders");
+        }
+
+        userRepository.delete(user);
         log.info("Deleted user with id={}", id);
     }
 }
