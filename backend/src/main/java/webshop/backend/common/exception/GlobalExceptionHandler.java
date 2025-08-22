@@ -79,6 +79,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(buildError(HttpStatus.BAD_REQUEST, ex.getMessage(), request));
     }
 
+    @ExceptionHandler(UserDeletionNotAllowedException.class)
+    public ResponseEntity<ApiError> HandleUserDeletionNotAllowed(UserDeletionNotAllowedException ex, HttpServletRequest request) {
+        log.error("UserDeletionNotAllowedException at {}: {}", request.getRequestURI(), ex.getMessage(), ex);
+        return ResponseEntity.badRequest().body(buildError(HttpStatus.BAD_REQUEST, ex.getMessage(), request));
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiError> handleGeneric(Exception ex, HttpServletRequest request) {
         log.error("Unhandled Exception at {}: {}", request.getRequestURI(), ex.getMessage(), ex);
