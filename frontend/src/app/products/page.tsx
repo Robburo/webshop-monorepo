@@ -1,3 +1,9 @@
-export default function Products() {
-  return <div></div>;
+import ProductList from "@/components/ProductList";
+
+export default function ProductsPage() {
+  return (
+    <main className="p-6">
+      <ProductList />
+    </main>
+  );
 }

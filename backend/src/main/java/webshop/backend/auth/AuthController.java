@@ -2,11 +2,13 @@ package webshop.backend.auth;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import webshop.backend.auth.dto.TokenResponse;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/token")
-    public String token(Authentication authentication) {
+    public ResponseEntity<TokenResponse> token(Authentication authentication) {
         log.info("POST /api/auth/token called");
 
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -36,6 +38,7 @@ public class AuthController {
                 .map(GrantedAuthority::getAuthority)
                 .toList();
 
-        return jwtService.generateToken(username, roles);
+        String jwt = jwtService.generateToken(username, roles);
+        return ResponseEntity.ok(new TokenResponse(jwt));
     }
 }

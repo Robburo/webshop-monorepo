@@ -1524,3 +1524,1178 @@ Caused by: java.lang.NoSuchMethodError: 'void org.springframework.web.method.Con
 2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 13:28:31 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 27771 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 13:28:31 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 13:28:31 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 13:28:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 13:28:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2025-09-30 13:28:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 13:28:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 13:28:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 13:28:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 13:28:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 646 ms
+2025-09-30 13:28:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 13:28:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3593e074
+2025-09-30 13:28:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 13:28:32 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 13:28:32 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.015s)
+2025-09-30 13:28:32 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 13:28:32 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 13:28:32 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 13:28:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 13:28:32 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 13:28:32 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 13:28:32 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 13:28:32 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 13:28:32 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 13:28:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 13:28:32 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 13:28:33 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 13:28:33 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 13:28:33 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 13:28:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 13:28:33 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.21 seconds (process running for 2.755)
+2025-09-30 13:33:03 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 13:33:03 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 13:33:03 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 13:33:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 13:33:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 13:33:06 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 28477 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 13:33:06 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 13:33:06 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 13:33:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 13:33:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 6 JPA repository interfaces.
+2025-09-30 13:33:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 13:33:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 13:33:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 13:33:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 13:33:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 621 ms
+2025-09-30 13:33:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 13:33:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3593e074
+2025-09-30 13:33:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 13:33:06 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 13:33:06 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.011s)
+2025-09-30 13:33:06 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 13:33:06 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 13:33:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 13:33:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 13:33:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 13:33:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 13:33:07 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 13:33:07 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 13:33:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 13:33:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 13:33:07 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 13:33:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 13:33:07 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 13:33:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 13:33:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 13:33:07 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.119 seconds (process running for 2.512)
+2025-09-30 13:44:46 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m39s158ms).
+2025-09-30 13:46:48 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 13:46:48 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 13:46:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 13:46:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 13:46:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:15:42 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 34603 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:15:42 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:15:42 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:15:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:15:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:15:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:15:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:15:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:15:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:15:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 658 ms
+2025-09-30 14:15:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:15:43 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3593e074
+2025-09-30 14:15:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:15:43 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:15:43 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.012s)
+2025-09-30 14:15:43 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:15:43 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:15:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:15:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:15:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:15:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:15:43 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:15:43 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:15:44 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:15:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:15:44 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:15:44 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:15:44 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:15:44 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:15:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:15:44 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.216 seconds (process running for 2.654)
+2025-09-30 14:15:47 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:15:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:15:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-09-30 14:18:25 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:18:25 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:18:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:18:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:18:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:18:28 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 35169 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:18:28 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:18:28 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:18:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:18:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:18:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:18:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:18:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:18:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:18:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 631 ms
+2025-09-30 14:18:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:18:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5855b0ed
+2025-09-30 14:18:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:18:29 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:18:29 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.017s)
+2025-09-30 14:18:29 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:18:29 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:18:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:18:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:18:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:18:30 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:18:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:18:30 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:18:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:18:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:18:30 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:18:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:18:30 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:18:30 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:18:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:18:31 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.183 seconds (process running for 3.612)
+2025-09-30 14:18:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:18:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:18:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-09-30 14:19:38 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:19:38 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:19:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:19:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:19:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:20:03 [main] INFO  w.backend.BackendApplicationTests - Starting BackendApplicationTests using Java 25 with PID 36002 (started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:20:03 [main] DEBUG w.backend.BackendApplicationTests - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:20:03 [main] INFO  w.backend.BackendApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:20:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:20:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:20:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:20:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7683d632
+2025-09-30 14:20:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:20:04 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:20:04 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.008s)
+2025-09-30 14:20:04 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:20:04 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:20:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:20:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:20:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:20:04 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:20:04 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:20:04 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:20:04 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:20:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:20:04 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:20:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:20:05 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:20:05 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:20:05 [main] INFO  w.backend.BackendApplicationTests - Started BackendApplicationTests in 1.741 seconds (process running for 2.691)
+2025-09-30 14:20:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:20:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:20:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:20:39 [main] INFO  w.backend.BackendApplicationTests - Starting BackendApplicationTests using Java 25 with PID 36291 (started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:20:39 [main] DEBUG w.backend.BackendApplicationTests - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:20:39 [main] INFO  w.backend.BackendApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:20:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:20:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:20:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:20:40 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ba06506
+2025-09-30 14:20:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:20:40 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:20:40 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.008s)
+2025-09-30 14:20:40 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:20:40 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:20:40 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:20:40 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:20:40 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:20:40 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:20:40 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:20:40 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:20:41 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:20:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:20:41 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:20:41 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:20:41 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:20:41 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:20:41 [main] INFO  w.backend.BackendApplicationTests - Started BackendApplicationTests in 2.001 seconds (process running for 2.335)
+2025-09-30 14:20:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:20:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:20:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:20:47 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 36415 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:20:47 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:20:47 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:20:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:20:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:20:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:20:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:20:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:20:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:20:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 624 ms
+2025-09-30 14:20:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:20:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5dacf18d
+2025-09-30 14:20:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:20:48 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:20:48 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.011s)
+2025-09-30 14:20:48 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:20:48 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:20:48 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:20:48 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:20:48 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:20:48 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:20:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:20:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:20:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:20:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:20:49 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:20:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:20:49 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:20:49 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:20:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:20:49 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.069 seconds (process running for 2.442)
+2025-09-30 14:21:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:21:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:21:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-30 14:22:42 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:22:42 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:22:42 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:22:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:22:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:22:45 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 36948 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:22:45 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:22:45 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:22:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:22:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:22:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:22:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:22:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:22:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:22:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 615 ms
+2025-09-30 14:22:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:22:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f52a229
+2025-09-30 14:22:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:22:45 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:22:45 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.015s)
+2025-09-30 14:22:45 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:22:45 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:22:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:22:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:22:45 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:22:46 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:22:46 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:22:46 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:22:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:22:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:22:46 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:22:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:22:46 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:22:46 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:22:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:22:47 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.123 seconds (process running for 2.517)
+2025-09-30 14:22:50 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:22:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:22:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-30 14:22:50 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:22:50 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:22:50 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:22:58 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:22:58 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:22:58 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:22:58 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:22:58 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:22:58 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:22:58 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:22:58 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:22:58 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:22:58 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:22:58 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:22:58 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:22:58 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:22:58 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:22:58 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:22:58 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:22:58 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:22:58 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:12 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:12 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:12 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:12 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:12 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:12 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:16 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:16 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:16 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:40 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:40 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:23:40 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:23:40 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:40 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:23:40 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:23:40 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:23:40 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:40 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:23:40 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:40 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:40 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:40 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:40 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:40 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:40 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:40 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:40 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:42 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:42 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:42 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:42 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:42 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:42 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:44 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:23:44 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:44 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:23:44 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:44 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:23:44 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:23:44 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:23:44 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:44 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:23:44 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:44 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:44 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:44 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:44 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:44 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:23:44 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:23:44 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:23:44 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:24:59 [http-nio-8080-exec-2] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:24:59 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:24:59 [http-nio-8080-exec-2] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:25:25 [http-nio-8080-exec-10] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:25:25 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:25:25 [http-nio-8080-exec-10] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:25:38 [http-nio-8080-exec-2] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:25:38 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:25:38 [http-nio-8080-exec-2] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:27:00 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:27:00 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:27:00 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:27:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:27:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:32:05 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 38750 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:32:05 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:32:05 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:32:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:32:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:32:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:32:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:32:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:32:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:32:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 640 ms
+2025-09-30 14:32:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:32:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f52a229
+2025-09-30 14:32:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:32:06 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:32:06 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.011s)
+2025-09-30 14:32:06 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:32:06 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:32:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:32:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:32:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:32:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:32:07 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:32:07 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:32:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:32:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:32:07 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:32:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:32:07 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:32:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:32:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:32:07 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.177 seconds (process running for 2.577)
+2025-09-30 14:32:12 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:32:12 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:32:12 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-30 14:32:13 [http-nio-8080-exec-1] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:32:13 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:13 [http-nio-8080-exec-1] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:18 [http-nio-8080-exec-4] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:32:18 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:18 [http-nio-8080-exec-4] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:39 [http-nio-8080-exec-7] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:32:39 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:39 [http-nio-8080-exec-7] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:32:42 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:32:42 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:32:42 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:32:42 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:32:42 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:32:42 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:13 [http-nio-8080-exec-5] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:35:13 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:35:13 [http-nio-8080-exec-5] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:35:15 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:15 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:15 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:15 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:15 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:15 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:15 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:15 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:15 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:15 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:19 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:19 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:19 [http-nio-8080-exec-1] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:19 [http-nio-8080-exec-1] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:19 [http-nio-8080-exec-1] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:19 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:19 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:19 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:19 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:19 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:22 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:22 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:22 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:22 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:22 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:22 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:22 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:22 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:22 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:22 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:24 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:24 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:24 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:24 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:24 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:24 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:29 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:29 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:29 [http-nio-8080-exec-4] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:29 [http-nio-8080-exec-4] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:29 [http-nio-8080-exec-4] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:29 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:29 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:29 [http-nio-8080-exec-5] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:29 [http-nio-8080-exec-5] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:29 [http-nio-8080-exec-5] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:29 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:29 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:29 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:29 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:29 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:29 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:29 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:29 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:29 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:29 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:30 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:30 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:30 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:30 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:30 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:30 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:40 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:40 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:40 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:40 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:40 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:40 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:40 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:40 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:40 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:40 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:42 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:42 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:42 [http-nio-8080-exec-10] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:42 [http-nio-8080-exec-10] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:42 [http-nio-8080-exec-10] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:42 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:42 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:42 [http-nio-8080-exec-2] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:42 [http-nio-8080-exec-2] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:42 [http-nio-8080-exec-2] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:44 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:44 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:44 [http-nio-8080-exec-1] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:44 [http-nio-8080-exec-1] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:44 [http-nio-8080-exec-1] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:47 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:47 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:47 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:47 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:47 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:47 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:47 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:47 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:47 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:47 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:48 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:48 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:48 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:48 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:48 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:48 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:50 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:50 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:50 [http-nio-8080-exec-4] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:50 [http-nio-8080-exec-4] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:50 [http-nio-8080-exec-4] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:50 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:50 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:50 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:50 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:50 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:50 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:50 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:50 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:50 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:50 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:50 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:50 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:50 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:50 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:50 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:51 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:51 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:51 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:51 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:51 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:51 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:52 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:52 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:52 [http-nio-8080-exec-9] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:52 [http-nio-8080-exec-9] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:52 [http-nio-8080-exec-9] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:52 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:52 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:52 [http-nio-8080-exec-10] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:35:52 [http-nio-8080-exec-10] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:35:52 [http-nio-8080-exec-10] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:35:53 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:53 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:53 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:53 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:53 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:53 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:53 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:53 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:53 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:53 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:54 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:54 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:54 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:54 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:35:54 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:35:54 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:35:55 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:55 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:55 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:55 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:55 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:35:55 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:35:55 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:35:55 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:35:55 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:35:55 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:36:34 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:36:34 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:36:34 [http-nio-8080-exec-4] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:36:34 [http-nio-8080-exec-4] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:36:34 [http-nio-8080-exec-4] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:36:34 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:36:34 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:36:34 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:36:34 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:36:34 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:38:57 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:38:57 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:38:57 [http-nio-8080-exec-8] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:38:57 [http-nio-8080-exec-8] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:38:57 [http-nio-8080-exec-8] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:39:01 [http-nio-8080-exec-10] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:39:01 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:39:01 [http-nio-8080-exec-10] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:39:08 [http-nio-8080-exec-2] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:39:08 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:39:08 [http-nio-8080-exec-2] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:39:11 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:11 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:11 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:11 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:11 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:11 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:41 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:41 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:41 [http-nio-8080-exec-8] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:39:41 [http-nio-8080-exec-8] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:39:41 [http-nio-8080-exec-8] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:39:41 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:41 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:41 [http-nio-8080-exec-9] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:39:41 [http-nio-8080-exec-9] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:39:41 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:41 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:41 [http-nio-8080-exec-9] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:39:41 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:50 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:50 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:39:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:39:50 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:39:50 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:50 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:39:50 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:39:50 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:50 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:50 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:39:50 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:50 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:50 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:50 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:50 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:50 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:50 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:52 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:52 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:52 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:52 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:39:52 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:39:52 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:39:54 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:54 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:54 [http-nio-8080-exec-2] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:39:54 [http-nio-8080-exec-2] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:39:54 [http-nio-8080-exec-2] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:39:56 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:56 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:56 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:39:56 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:39:56 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:39:56 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:56 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:56 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:39:56 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:39:56 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:39:58 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:58 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:58 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:39:58 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:39:58 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:39:58 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:39:58 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:39:58 [http-nio-8080-exec-4] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:39:58 [http-nio-8080-exec-4] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:39:58 [http-nio-8080-exec-4] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:40:04 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:40:04 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:40:04 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:40:04 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:40:04 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:40:04 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:40:04 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:40:04 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:40:04 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:40:04 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:40:04 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:40:04 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:40:04 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:40:04 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:40:04 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:40:04 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:40:04 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:40:04 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:40:15 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:40:15 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:40:15 [http-nio-8080-exec-1] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:40:15 [http-nio-8080-exec-1] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:40:15 [http-nio-8080-exec-1] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:42:37 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:42:37 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:37 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:37 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:42:37 [http-nio-8080-exec-1] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:42:37 [http-nio-8080-exec-1] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:42:37 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:37 [http-nio-8080-exec-1] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:42:40 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:40 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:40 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:40 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:40 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:40 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:41 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:41 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:41 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:41 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:41 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:41 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:42 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:42 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:42 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:42 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:42 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:42 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:44 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:44 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:44 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:44 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:44 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:44 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:45 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:45 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:45 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:45 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:45 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:45 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:47 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:47 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:47 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:47 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:47 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:47 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:47 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:47 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:47 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:47 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:47 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:47 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:48 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:48 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:48 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:48 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:48 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:48 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:49 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:49 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:49 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:49 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:49 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:49 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:50 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:50 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:50 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:50 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:51 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:51 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:51 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:51 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:51 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:51 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:53 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:53 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:53 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:53 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:53 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:53 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:53 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:53 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:53 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:53 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:42:53 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:42:53 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:42:54 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:54 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:54 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:55 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:55 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:55 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:56 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:42:56 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:42:56 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:42:56 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:42:56 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:42:56 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:42:56 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:42:56 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-09-30 14:42:56 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-09-30 14:42:56 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=1
+2025-09-30 14:42:57 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:57 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:57 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:57 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:57 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:42:57 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:42:57 [http-nio-8080-exec-1] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:42:57 [http-nio-8080-exec-1] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:42:57 [http-nio-8080-exec-1] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:42:57 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:42:57 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:42:57 [http-nio-8080-exec-8] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-09-30 14:42:57 [http-nio-8080-exec-8] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-09-30 14:42:57 [http-nio-8080-exec-8] INFO  w.b.d.order.service.OrderService - Fetched 3 orders for userId=1
+2025-09-30 14:42:59 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:59 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:59 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:42:59 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:42:59 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:42:59 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:43:03 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:03 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:43:03 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:03 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:43:03 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:43:03 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:43:03 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:43:03 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:03 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:43:03 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:03 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:03 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:03 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:03 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:03 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:03 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:03 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:03 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:07 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:07 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:07 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:07 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:43:07 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:43:07 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:43:09 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:43:09 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:43:09 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:43:09 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:43:09 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:43:09 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:44:25 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:44:25 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:44:25 [http-nio-8080-exec-5] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-09-30 14:44:25 [http-nio-8080-exec-5] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-09-30 14:44:25 [http-nio-8080-exec-5] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-09-30 14:46:02 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:46:02 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:46:02 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:46:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:46:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-30 14:46:04 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 24.0.2 with PID 41945 (/Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend/target/classes started by robinburo in /Users/robinburo/Documents/Coding projects/fullstack/webshop-monorepo/backend)
+2025-09-30 14:46:04 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-09-30 14:46:04 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-30 14:46:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30 14:46:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 6 JPA repository interfaces.
+2025-09-30 14:46:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-09-30 14:46:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-30 14:46:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-30 14:46:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-30 14:46:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 613 ms
+2025-09-30 14:46:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-30 14:46:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3593e074
+2025-09-30 14:46:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-30 14:46:05 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 16.9)
+2025-09-30 14:46:05 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.011s)
+2025-09-30 14:46:05 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-09-30 14:46:05 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-09-30 14:46:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30 14:46:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-09-30 14:46:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-30 14:46:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30 14:46:05 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-30 14:46:05 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.9
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30 14:46:06 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30 14:46:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:46:06 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-09-30 14:46:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30 14:46:06 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-30 14:46:06 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-09-30 14:46:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-09-30 14:46:06 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 2.114 seconds (process running for 2.509)
+2025-09-30 14:46:11 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30 14:46:11 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-30 14:46:11 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-30 14:46:11 [http-nio-8080-exec-2] DEBUG w.b.d.user.controller.UserController - POST /api/users/register called
+2025-09-30 14:46:11 [http-nio-8080-exec-2] DEBUG w.b.domains.user.service.UserService - Registering new user with username=Robin
+2025-09-30 14:46:11 [http-nio-8080-exec-2] INFO  w.b.domains.user.service.UserService - Registered new user with id=6 and username=Robin
+2025-09-30 14:46:42 [http-nio-8080-exec-8] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:46:42 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:46:42 [http-nio-8080-exec-8] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:46:49 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:46:49 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:46:49 [http-nio-8080-exec-9] DEBUG w.b.d.user.controller.UserController - GET /api/users called
+2025-09-30 14:46:49 [http-nio-8080-exec-9] DEBUG w.b.domains.user.service.UserService - Fetching all users
+2025-09-30 14:46:49 [http-nio-8080-exec-9] INFO  w.b.domains.user.service.UserService - Fetched 6 users
+2025-09-30 14:47:09 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:47:09 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:47:09 [http-nio-8080-exec-10] DEBUG w.b.domains.admin.AdminController - DELETE /api/admin/users/6 called by ADMIN
+2025-09-30 14:47:09 [http-nio-8080-exec-10] DEBUG w.b.domains.user.service.UserService - Deleting user with id=6
+2025-09-30 14:47:09 [http-nio-8080-exec-10] INFO  w.b.domains.user.service.UserService - Deleted user with id=6
+2025-09-30 14:47:12 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:47:12 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:47:12 [http-nio-8080-exec-1] DEBUG w.b.d.user.controller.UserController - GET /api/users called
+2025-09-30 14:47:12 [http-nio-8080-exec-1] DEBUG w.b.domains.user.service.UserService - Fetching all users
+2025-09-30 14:47:12 [http-nio-8080-exec-1] INFO  w.b.domains.user.service.UserService - Fetched 5 users
+2025-09-30 14:47:17 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 14:47:17 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 14:47:17 [http-nio-8080-exec-2] DEBUG w.b.domains.admin.AdminController - DELETE /api/admin/users/5 called by ADMIN
+2025-09-30 14:47:17 [http-nio-8080-exec-2] DEBUG w.b.domains.user.service.UserService - Deleting user with id=5
+2025-09-30 14:47:17 [http-nio-8080-exec-2] WARN  w.b.domains.user.service.UserService - Cannot delete user with id=5 because it still has cart items
+2025-09-30 14:47:17 [http-nio-8080-exec-2] ERROR w.b.c.e.GlobalExceptionHandler - UserDeletionNotAllowedException at /api/admin/users/5: Cannot delete user with id=5 because it has related cart items
+webshop.backend.common.exception.UserDeletionNotAllowedException: Cannot delete user with id=5 because it has related cart items
+	at webshop.backend.domains.user.service.UserService.deleteUser(UserService.java:96)
+	at webshop.backend.domains.admin.AdminController.deleteUser(AdminController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at webshop.backend.config.JwtFilter.doFilterInternal(JwtFilter.java:53)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+2025-09-30 14:47:48 [http-nio-8080-exec-5] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:47:48 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:47:48 [http-nio-8080-exec-5] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:47:52 [http-nio-8080-exec-6] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:47:52 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:47:52 [http-nio-8080-exec-6] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:47:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:47:57 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:47:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:47:57 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:47:57 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:47:57 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:47:57 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:47:57 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:47:57 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:47:57 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:47:57 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:47:57 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:47:57 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:47:57 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:47:57 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:47:57 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:47:57 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:47:57 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:48:04 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:48:04 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:48:04 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-09-30 14:48:04 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-09-30 14:48:04 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CategoryService - Fetched 8 categories
+2025-09-30 14:48:04 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:48:04 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-09-30 14:48:04 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-09-30 14:48:04 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 14 products
+2025-09-30 14:48:12 [http-nio-8080-exec-6] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:48:12 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:48:12 [http-nio-8080-exec-6] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:48:43 [http-nio-8080-exec-7] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-09-30 14:48:43 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:48:43 [http-nio-8080-exec-7] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-09-30 14:48:54 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 14:48:54 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 14:48:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 14:48:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 14:48:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
