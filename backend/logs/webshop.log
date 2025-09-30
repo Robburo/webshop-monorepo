@@ -1514,3 +1514,13 @@ Caused by: java.lang.NoSuchMethodError: 'void org.springframework.web.method.Con
 2025-09-30 10:47:00 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-09-30 10:47:00 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2025-09-30 10:47:03 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 133 ms
+2025-09-30 10:52:11 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-09-30 10:52:11 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-09-30 10:52:11 [http-nio-8080-exec-9] DEBUG w.b.d.user.controller.UserController - GET /api/users called
+2025-09-30 10:52:11 [http-nio-8080-exec-9] DEBUG w.b.domains.user.service.UserService - Fetching all users
+2025-09-30 10:52:11 [http-nio-8080-exec-9] INFO  w.b.domains.user.service.UserService - Fetched 5 users
+2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30 10:54:24 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-30 10:54:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
