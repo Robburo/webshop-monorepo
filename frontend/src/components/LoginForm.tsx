@@ -1,20 +1,23 @@
 "use client";
 import { useState } from "react";
-import { login } from "@/services/authApi";
-import { redirect, RedirectType } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { login as loginApi } from "@/services/authApi";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
+  const { login } = useAuth();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     try {
-      const token = await login(username, password);
-      localStorage.setItem("jwt", token); // lagre JWT lokalt
+      const token = await loginApi(username, password);
+      await login(token); // oppdater context + hent user
       setError("");
-      redirect('/products', RedirectType.push);
+      router.push("/products");
     } catch (err) {
       console.error("Innlogging feilet:", err);
       setError("Ugyldig brukernavn eller passord");

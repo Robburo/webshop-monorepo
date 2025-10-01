@@ -12,7 +12,6 @@ export default function Navbar() {
         <Link href="/products">Produkter</Link>
         <Link href="/categories">Kategorier</Link>
 
-        {/* Bare når innlogget */}
         {user && (
           <>
             <Link href="/cart">Handlekurv</Link>
@@ -25,7 +24,12 @@ export default function Navbar() {
       <div className="flex gap-4">
         {user ? (
           <>
-            <span>Hei, {user.username}</span>
+            <Link
+              href="/profile"
+              className="hover:underline text-blue-400"
+            >
+              Hei, {user.username}
+            </Link>
             <button
               onClick={logout}
               className="text-red-400 hover:text-red-600"
