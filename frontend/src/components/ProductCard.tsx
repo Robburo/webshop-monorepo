@@ -14,6 +14,7 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div className="p-6 bg-gray-800 rounded-lg shadow flex flex-col justify-between">
+      <p>ProductCard.tsx</p>
       <div>
         <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
         <p className="text-sm text-gray-400 mb-4">{product.description}</p>

@@ -41,6 +41,7 @@ export default function ProductList() {
 
   return (
     <section className="my-12">
+      <p>ProductList.tsx</p>
       <h2 className="text-2xl font-bold mb-6">
         {categoryId ? "Produkter i valgt kategori" : "Alle produkter"}
       </h2>

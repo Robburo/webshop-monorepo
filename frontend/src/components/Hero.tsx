@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="text-center py-12 bg-gray-900 text-white rounded-lg">
+      <p>Hero.tsx</p>
       <h1 className="text-4xl font-bold mb-4">Velkommen til Webshoppen</h1>
       <p className="mb-6">Finn de beste produktene til gode priser.</p>
       <Link

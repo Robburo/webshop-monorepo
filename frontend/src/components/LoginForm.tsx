@@ -29,6 +29,7 @@ export default function LoginForm() {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-6 bg-gray-800 rounded shadow"
     >
+      <p>LoginForm.tsx</p>
       <h2 className="text-xl font-bold mb-4">Logg inn</h2>
       {error && <p className="mb-2 text-red-500">{error}</p>}
       <input

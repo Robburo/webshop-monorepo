@@ -8,6 +8,7 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white p-4 flex justify-between">
       <div className="flex gap-4">
+        <p>Navbar.tsx</p>
         <Link href="/">Hjem</Link>
         <Link href="/products">Produkter</Link>
         <Link href="/categories">Kategorier</Link>

@@ -22,6 +22,7 @@ export default function RegisterForm() {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-6 bg-gray-800 rounded shadow"
     >
+      <p>RegisterForm.tsx</p>
       <h2 className="text-xl font-bold mb-4">Registrer ny bruker</h2>
       <input
         type="text"

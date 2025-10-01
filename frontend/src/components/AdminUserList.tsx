@@ -26,6 +26,7 @@ export default function AdminUserList() {
 
   return (
     <div>
+      <p>AdminUserList.tsx</p>
       <h2 className="text-xl font-bold mb-4">Alle brukere (Admin)</h2>
       <ul className="space-y-2">
         {users.map((u) => (

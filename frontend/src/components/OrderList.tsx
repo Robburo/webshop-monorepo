@@ -18,6 +18,7 @@ export default function OrderList() {
 
   return (
     <section className="my-12">
+      <p>Orderlist.tsx</p>
       <h2 className="text-2xl font-bold mb-6">Mine ordre</h2>
       <div className="space-y-4">
         {orders.map((order) => (

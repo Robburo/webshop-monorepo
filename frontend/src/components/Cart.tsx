@@ -35,6 +35,7 @@ export default function Cart() {
 
   return (
     <div>
+      <p>Cart.tsx</p>
       {cart.length === 0 ? (
         <p>Handlekurven er tom</p>
       ) : (

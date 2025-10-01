@@ -7,6 +7,7 @@ interface Props {
 export default function OrderCard({ order }: Props) {
   return (
     <div className="p-4 bg-gray-800 rounded shadow">
+      <p>OrderCard.tsx</p>
       <p className="font-semibold">
         Ordre #{order.id} – {new Date(order.createdAt).toLocaleDateString()} –{" "}
         Status: {order.status}

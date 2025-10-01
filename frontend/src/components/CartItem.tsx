@@ -21,6 +21,7 @@ export default function CartItem({ item }: Props) {
 
   return (
     <li className="flex justify-between items-center p-4 bg-gray-800 rounded shadow">
+      <p>CartItem.tsx</p>
       <div>
         <h3 className="font-semibold">{item.productName}</h3>
         <p className="text-sm text-gray-400">Antall: {item.quantity}</p>
