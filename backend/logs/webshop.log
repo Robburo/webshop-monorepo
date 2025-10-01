@@ -570,3 +570,435 @@ Caused by: org.postgresql.util.PSQLException: FATAL: database "webshop" does not
 2025-10-01 15:36:03 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-01 15:36:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-10-01 15:36:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-01 17:25:51 [main] INFO  webshop.backend.BackendApplication - Starting BackendApplication using Java 21.0.8 with PID 21616 (C:\Users\robin\Desktop\Coding projects\Fullstack\webshop-monorepo\backend\target\classes started by robin in C:\Users\robin\Desktop\Coding projects\Fullstack\webshop-monorepo\backend)
+2025-10-01 17:25:51 [main] DEBUG webshop.backend.BackendApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-10-01 17:25:51 [main] INFO  webshop.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-01 17:25:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-01 17:25:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+2025-10-01 17:25:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-01 17:25:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-01 17:25:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-10-01 17:25:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-01 17:25:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1071 ms
+2025-10-01 17:25:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-01 17:25:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@252d8df6
+2025-10-01 17:25:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-01 17:25:53 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/webshop (PostgreSQL 18.0)
+2025-10-01 17:25:53 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 17.
+2025-10-01 17:25:53 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.052s)
+2025-10-01 17:25:53 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 7
+2025-10-01 17:25:53 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-10-01 17:25:53 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-01 17:25:53 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-10-01 17:25:53 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-01 17:25:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-01 17:25:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-01 17:25:53 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-01 17:25:54 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-01 17:25:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01 17:25:54 [main] INFO  webshop.backend.auth.JwtService - JwtService initialized with expiration=3600000ms
+2025-10-01 17:25:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-01 17:25:54 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-01 17:25:54 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-10-01 17:25:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-10-01 17:25:54 [main] INFO  webshop.backend.BackendApplication - Started BackendApplication in 3.276 seconds (process running for 6.072)
+2025-10-01 17:25:54 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-01 17:25:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-01 17:25:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-10-01 17:25:55 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:55 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:55 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:55 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:55 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:55 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:55 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:55 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:55 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:56 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:56 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:56 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:56 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:56 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:56 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:56 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:56 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:56 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:57 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:57 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:57 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:57 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:57 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:58 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:58 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:58 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:58 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:58 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:58 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:59 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:59 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:59 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:59 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:59 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:59 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:59 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:25:59 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:25:59 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:59 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:59 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:25:59 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:59 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:59 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:59 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:25:59 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:25:59 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:25:59 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:26:38 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:38 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:38 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:38 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:38 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:38 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:50 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:26:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:50 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:26:50 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:50 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:50 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:50 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:50 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:26:50 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:50 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:26:50 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:26:50 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:26:58 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:26:58 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:26:58 [http-nio-8080-exec-2] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:58 [http-nio-8080-exec-2] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:58 [http-nio-8080-exec-2] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:58 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:26:58 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:26:58 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:26:58 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:26:58 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:26:58 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:26:58 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:27:36 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:27:36 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:27:36 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:27:36 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:27:36 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:27:36 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:29:25 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:29:25 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:29:25 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:29:25 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:29:25 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:29:25 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:36 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:30:36 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:36 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:30:36 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:36 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:30:36 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:36 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:30:36 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:30:36 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:30:36 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:36 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:36 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:30:50 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:30:50 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:30:50 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:31:23 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:31:23 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:31:23 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:31:23 [http-nio-8080-exec-2] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:31:23 [http-nio-8080-exec-2] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:31:23 [http-nio-8080-exec-2] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:22 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:22 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:22 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:22 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:22 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:22 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:39 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:39 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:39 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:39 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:39 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:39 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:42 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:42 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:42 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:42 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:42 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:42 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:43 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:43 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:43 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:43 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:43 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:43 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:46 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:46 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:46 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:46 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:32:46 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:32:46 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:32:47 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:47 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:47 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:32:47 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:32:47 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:32:47 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:33:08 [http-nio-8080-exec-4] DEBUG w.b.d.user.controller.UserController - POST /api/users/register called
+2025-10-01 17:33:08 [http-nio-8080-exec-4] DEBUG w.b.domains.user.service.UserService - Registering new user with username=robin
+2025-10-01 17:33:08 [http-nio-8080-exec-4] INFO  w.b.domains.user.service.UserService - Registered new user with id=5 and username=robin
+2025-10-01 17:33:16 [http-nio-8080-exec-5] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-10-01 17:33:16 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'robin' with roles [ROLE_USER]
+2025-10-01 17:33:16 [http-nio-8080-exec-5] DEBUG webshop.backend.auth.JwtService - Generated token for user 'robin' with roles [ROLE_USER]
+2025-10-01 17:33:16 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:16 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:16 [http-nio-8080-exec-9] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:33:16 [http-nio-8080-exec-9] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=robin
+2025-10-01 17:33:16 [http-nio-8080-exec-9] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=5
+2025-10-01 17:33:16 [http-nio-8080-exec-10] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:16 [http-nio-8080-exec-10] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:16 [http-nio-8080-exec-10] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:16 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:16 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:16 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:20 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:20 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:20 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:20 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:20 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=5
+2025-10-01 17:33:20 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:20 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:20 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:20 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:20 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=5
+2025-10-01 17:33:22 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:33:22 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:33:22 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:33:22 [http-nio-8080-exec-2] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:33:22 [http-nio-8080-exec-2] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:33:22 [http-nio-8080-exec-2] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:33:22 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:22 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:22 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:22 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:22 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:22 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:24 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:24 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:24 [http-nio-8080-exec-9] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:33:24 [http-nio-8080-exec-9] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=robin
+2025-10-01 17:33:24 [http-nio-8080-exec-9] INFO  w.b.d.order.service.OrderService - Fetched 0 orders for userId=5
+2025-10-01 17:33:24 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:24 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:24 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:33:24 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=robin
+2025-10-01 17:33:24 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 0 orders for userId=5
+2025-10-01 17:33:25 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:25 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:25 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:25 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:25 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=5
+2025-10-01 17:33:25 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:25 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:25 [http-nio-8080-exec-2] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:25 [http-nio-8080-exec-2] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:25 [http-nio-8080-exec-2] INFO  w.b.d.c.service.CartItemService - Fetched 0 cart items for userId=5
+2025-10-01 17:33:26 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:33:26 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:33:26 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:33:26 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:33:26 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:33:26 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:33:26 [http-nio-8080-exec-4] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:26 [http-nio-8080-exec-4] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:26 [http-nio-8080-exec-4] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:27 [http-nio-8080-exec-7] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:33:27 [http-nio-8080-exec-7] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:33:27 [http-nio-8080-exec-7] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:33:28 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:28 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:28 [http-nio-8080-exec-6] DEBUG w.b.d.c.c.CartItemController - POST /api/cart/add called with payload: CartItemCreateDto[productId=1, quantity=1]
+2025-10-01 17:33:28 [http-nio-8080-exec-6] DEBUG w.b.d.c.service.CartItemService - Adding productId=1 quantity=1 to cart for username=robin
+2025-10-01 17:33:28 [http-nio-8080-exec-6] INFO  w.b.d.c.service.CartItemService - Added productId=1 quantity=1 to cart for userId=5 cartItemId=22
+2025-10-01 17:33:28 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:28 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:28 [http-nio-8080-exec-9] DEBUG w.b.d.c.c.CartItemController - POST /api/cart/add called with payload: CartItemCreateDto[productId=2, quantity=1]
+2025-10-01 17:33:28 [http-nio-8080-exec-9] DEBUG w.b.d.c.service.CartItemService - Adding productId=2 quantity=1 to cart for username=robin
+2025-10-01 17:33:28 [http-nio-8080-exec-9] INFO  w.b.d.c.service.CartItemService - Added productId=2 quantity=1 to cart for userId=5 cartItemId=23
+2025-10-01 17:33:28 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:28 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:28 [http-nio-8080-exec-3] DEBUG w.b.d.c.c.CartItemController - POST /api/cart/add called with payload: CartItemCreateDto[productId=3, quantity=1]
+2025-10-01 17:33:28 [http-nio-8080-exec-3] DEBUG w.b.d.c.service.CartItemService - Adding productId=3 quantity=1 to cart for username=robin
+2025-10-01 17:33:28 [http-nio-8080-exec-3] INFO  w.b.d.c.service.CartItemService - Added productId=3 quantity=1 to cart for userId=5 cartItemId=24
+2025-10-01 17:33:29 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:29 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:29 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:29 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:29 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CartItemService - Fetched 3 cart items for userId=5
+2025-10-01 17:33:29 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:29 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:29 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:29 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:29 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CartItemService - Fetched 3 cart items for userId=5
+2025-10-01 17:33:32 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:32 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:32 [http-nio-8080-exec-7] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:33:32 [http-nio-8080-exec-7] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=robin
+2025-10-01 17:33:32 [http-nio-8080-exec-7] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=5
+2025-10-01 17:33:34 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:34 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:34 [http-nio-8080-exec-5] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:33:34 [http-nio-8080-exec-5] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=robin
+2025-10-01 17:33:34 [http-nio-8080-exec-5] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=5
+2025-10-01 17:33:35 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:35 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:35 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:33:35 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=robin
+2025-10-01 17:33:35 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 0 orders for userId=5
+2025-10-01 17:33:35 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:35 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:35 [http-nio-8080-exec-2] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:33:35 [http-nio-8080-exec-2] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=robin
+2025-10-01 17:33:35 [http-nio-8080-exec-2] INFO  w.b.d.order.service.OrderService - Fetched 0 orders for userId=5
+2025-10-01 17:33:36 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:36 [http-nio-8080-exec-10] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:36 [http-nio-8080-exec-10] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:36 [http-nio-8080-exec-10] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:36 [http-nio-8080-exec-10] INFO  w.b.d.c.service.CartItemService - Fetched 3 cart items for userId=5
+2025-10-01 17:33:36 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:33:36 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'robin'
+2025-10-01 17:33:36 [http-nio-8080-exec-4] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:33:36 [http-nio-8080-exec-4] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=robin
+2025-10-01 17:33:36 [http-nio-8080-exec-4] INFO  w.b.d.c.service.CartItemService - Fetched 3 cart items for userId=5
+2025-10-01 17:34:05 [http-nio-8080-exec-5] INFO  webshop.backend.auth.AuthController - POST /api/auth/token called
+2025-10-01 17:34:05 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Generating JWT for user 'admin' with roles [ROLE_ADMIN]
+2025-10-01 17:34:05 [http-nio-8080-exec-5] DEBUG webshop.backend.auth.JwtService - Generated token for user 'admin' with roles [ROLE_ADMIN]
+2025-10-01 17:34:05 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:05 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:05 [http-nio-8080-exec-9] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:34:05 [http-nio-8080-exec-9] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-10-01 17:34:05 [http-nio-8080-exec-9] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-10-01 17:34:05 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:34:05 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:34:05 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:34:05 [http-nio-8080-exec-8] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:34:05 [http-nio-8080-exec-8] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:34:05 [http-nio-8080-exec-8] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:34:11 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:11 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:11 [http-nio-8080-exec-4] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:34:11 [http-nio-8080-exec-4] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-10-01 17:34:11 [http-nio-8080-exec-4] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-10-01 17:34:12 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:12 [http-nio-8080-exec-6] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:12 [http-nio-8080-exec-6] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:34:12 [http-nio-8080-exec-6] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-10-01 17:34:12 [http-nio-8080-exec-6] INFO  w.b.d.order.service.OrderService - Fetched 2 orders for userId=1
+2025-10-01 17:34:12 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:12 [http-nio-8080-exec-9] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:12 [http-nio-8080-exec-9] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:34:12 [http-nio-8080-exec-9] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-10-01 17:34:12 [http-nio-8080-exec-9] INFO  w.b.d.order.service.OrderService - Fetched 2 orders for userId=1
+2025-10-01 17:34:18 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:18 [http-nio-8080-exec-1] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:18 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:34:18 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-10-01 17:34:18 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CartItemService - Fetched 5 cart items for userId=1
+2025-10-01 17:34:18 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:18 [http-nio-8080-exec-8] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:18 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:34:18 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-10-01 17:34:18 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CartItemService - Fetched 5 cart items for userId=1
+2025-10-01 17:34:55 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:55 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:55 [http-nio-8080-exec-7] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:55 [http-nio-8080-exec-5] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:55 [http-nio-8080-exec-7] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:34:55 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CartItemController - GET /api/cart called
+2025-10-01 17:34:55 [http-nio-8080-exec-7] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-10-01 17:34:55 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CartItemService - Fetching cart items for current user username=admin
+2025-10-01 17:34:55 [http-nio-8080-exec-7] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-10-01 17:34:55 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CartItemService - Fetched 5 cart items for userId=1
+2025-10-01 17:34:56 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:56 [http-nio-8080-exec-2] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:56 [http-nio-8080-exec-2] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:34:56 [http-nio-8080-exec-2] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-10-01 17:34:56 [http-nio-8080-exec-2] INFO  w.b.d.order.service.OrderService - Fetched 2 orders for userId=1
+2025-10-01 17:34:56 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:34:56 [http-nio-8080-exec-3] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:34:56 [http-nio-8080-exec-3] DEBUG w.b.d.o.controller.OrderController - GET /api/orders called
+2025-10-01 17:34:56 [http-nio-8080-exec-3] DEBUG w.b.d.order.service.OrderService - Fetching orders for username=admin
+2025-10-01 17:34:56 [http-nio-8080-exec-3] INFO  w.b.d.order.service.OrderService - Fetched 2 orders for userId=1
+2025-10-01 17:38:36 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - Validating JWT
+2025-10-01 17:38:36 [http-nio-8080-exec-4] INFO  webshop.backend.auth.JwtService - JWT validated successfully for user 'admin'
+2025-10-01 17:38:36 [http-nio-8080-exec-4] DEBUG w.b.d.user.controller.UserController - GET /api/users/me called
+2025-10-01 17:38:36 [http-nio-8080-exec-4] DEBUG w.b.domains.user.service.UserService - Fetching current user with username=admin
+2025-10-01 17:38:36 [http-nio-8080-exec-4] INFO  w.b.domains.user.service.UserService - Successfully fetched current user with id=1
+2025-10-01 17:38:38 [http-nio-8080-exec-9] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:38:38 [http-nio-8080-exec-9] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:38:38 [http-nio-8080-exec-9] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:38:38 [http-nio-8080-exec-6] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:38:38 [http-nio-8080-exec-6] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:38:38 [http-nio-8080-exec-6] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:38:40 [http-nio-8080-exec-1] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:38:40 [http-nio-8080-exec-1] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:38:40 [http-nio-8080-exec-1] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:38:40 [http-nio-8080-exec-8] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:38:40 [http-nio-8080-exec-8] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:38:40 [http-nio-8080-exec-8] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:44:31 [http-nio-8080-exec-5] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:44:31 [http-nio-8080-exec-5] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:44:31 [http-nio-8080-exec-5] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:44:37 [http-nio-8080-exec-2] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:44:37 [http-nio-8080-exec-2] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:44:37 [http-nio-8080-exec-2] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:44:37 [http-nio-8080-exec-3] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:44:37 [http-nio-8080-exec-3] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:44:37 [http-nio-8080-exec-3] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:44:42 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:44:42 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:44:42 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:44:42 [http-nio-8080-exec-1] DEBUG w.b.d.p.controller.ProductController - GET /api/products called
+2025-10-01 17:44:42 [http-nio-8080-exec-1] DEBUG w.b.d.product.service.ProductService - Fetching all products
+2025-10-01 17:44:42 [http-nio-8080-exec-1] INFO  w.b.d.product.service.ProductService - Fetched 13 products
+2025-10-01 17:44:43 [http-nio-8080-exec-7] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:44:43 [http-nio-8080-exec-7] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:44:43 [http-nio-8080-exec-7] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:44:43 [http-nio-8080-exec-5] DEBUG w.b.d.c.c.CategoryController - GET /api/categories called
+2025-10-01 17:44:43 [http-nio-8080-exec-5] DEBUG w.b.d.c.service.CategoryService - Fetching all categories
+2025-10-01 17:44:43 [http-nio-8080-exec-5] INFO  w.b.d.c.service.CategoryService - Fetched 6 categories
+2025-10-01 17:59:18 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-01 17:59:18 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-01 17:59:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01 17:59:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-01 17:59:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

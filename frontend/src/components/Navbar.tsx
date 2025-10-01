@@ -6,7 +6,7 @@ export default function Navbar() {
   const { user, isAdmin, logout } = useAuth();
 
   return (
-    <nav className="bg-gray-900 text-white p-4 flex justify-between">
+    <nav className="bg-gray-800 text-white p-4 flex justify-between">
       <div className="flex gap-4">
         <p>Navbar.tsx</p>
         <Link href="/">Hjem</Link>
