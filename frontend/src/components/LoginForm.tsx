@@ -3,11 +3,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { login as loginApi } from "@/services/authApi";
 import { useAuth } from "@/hooks/useAuth";
+import PopupModal from "@/modals/PopupModal";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const { login } = useAuth();
 
@@ -17,14 +19,20 @@ export default function LoginForm() {
       const token = await loginApi(username, password);
       await login(token); // oppdater context + hent user
       setError("");
-      router.push("/products");
+      setShowModal(true);
     } catch (err) {
       console.error("Innlogging feilet:", err);
       setError("Ugyldig brukernavn eller passord");
     }
   }
 
+  function handleCloseModal() {
+    setShowModal(false);
+    router.push("/"); // redirect home
+  }
+
   return (
+    <>
     <form
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-6 bg-gray-800 rounded shadow"
@@ -53,5 +61,14 @@ export default function LoginForm() {
         Logg inn
       </button>
     </form>
+
+    <PopupModal
+        open={showModal}
+        onClose={handleCloseModal}
+        title="Innlogging vellykket"
+        message={`Velkommen tilbake, ${username}!`}
+        autoClose={5000} // lukker automatisk etter 5s
+      />
+      </>
   );
 }

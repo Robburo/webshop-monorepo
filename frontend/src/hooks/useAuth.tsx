@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { getCurrentUser, UserResponseDto } from "@/services/userApi";
+import { useRouter } from "next/navigation";
 
 interface AuthContextType {
   user: UserResponseDto | null;
@@ -16,6 +17,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<UserResponseDto | null>(null);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
+  const router = useRouter();
 
   // kjøres ved oppstart: sjekk om token finnes
   useEffect(() => {
@@ -59,6 +61,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem("jwt");
     setUser(null);
     setIsAdmin(false);
+    router.push("/");
   }
 
   return (

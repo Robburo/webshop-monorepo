@@ -1,23 +1,35 @@
 "use client";
 import { useState } from "react";
 import { registerUser } from "@/services/userApi";
+import { useRouter } from "next/navigation";
+import PopupModal from "@/modals/PopupModal";
 
 export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     try {
       await registerUser({ username, email, password });
-      alert("Bruker registrert!");
+      setShowModal(true);
+      router.push("/login");
     } catch (err) {
       console.error("Kunne ikke registrere bruker:", err);
+      alert("Feil ved registrering av ny bruker");
     }
   }
 
+  function handleCloseModal() {
+    setShowModal(false);
+    router.push("/"); // redirect home
+  }
+
   return (
+    <>
     <form
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-6 bg-gray-800 rounded shadow"
@@ -52,5 +64,13 @@ export default function RegisterForm() {
         Registrer
       </button>
     </form>
+    <PopupModal
+            open={showModal}
+            onClose={handleCloseModal}
+            title="Registrering vellykket"
+            message={`Velkommen, ${username}!`}
+            autoClose={5000} // lukker automatisk etter 5s
+          />
+          </>
   );
 }
