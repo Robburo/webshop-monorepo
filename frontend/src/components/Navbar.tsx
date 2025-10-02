@@ -3,29 +3,27 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/hooks/useAuth";
-import PopupModal from "@/modals/PopupModal";
+import LoginModal from "@/modals/LoginModal";
+import RegisterModal from "@/modals/RegisterModal";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const { user, isAdmin, logout } = useAuth();
   const router = useRouter();
-  const [showModal, setShowModal] = useState(false);
-
-  function handleCloseModal() {
-    setShowModal(false);
-    router.push("/"); // redirect home
-  }
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   async function handleLogout(e: React.FormEvent) {
     e.preventDefault();
-    logout(); // oppdater context + hent user
-    setShowModal(true);
+    logout();
+    router.push("/");
+    toast.success("Du ble logget ut!");
   }
 
   return (
     <>
       <nav className="flex justify-between p-4 text-white bg-gray-800">
         <div className="flex gap-4">
-          <p>Navbar.tsx</p>
           <Link href="/">Hjem</Link>
           <Link href="/products">Produkter</Link>
           <Link href="/categories">Kategorier</Link>
@@ -48,18 +46,32 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link href="/login">Logg inn</Link>
-              <Link href="/register">Registrer</Link>
+              <button
+                onClick={() => setShowLoginModal(true)}
+                className="text-blue-400 hover:underline"
+              >
+                Logg inn
+              </button>
+              <button
+                onClick={() => setShowRegisterModal(true)}
+                className="text-blue-400 hover:underline"
+              >
+                Registrer
+              </button>
             </>
           )}
         </div>
       </nav>
-      <PopupModal
-        open={showModal}
-        onClose={handleCloseModal}
-        title="Utlogging vellykket"
-        message={`Sees snart!`}
-        autoClose={5000} // lukker automatisk etter 5s
+
+      {/* Login-popup */}
+      <LoginModal
+        open={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+      />
+      {/* Register-popup */}
+      <RegisterModal
+        open={showRegisterModal}
+        onClose={() => setShowRegisterModal(false)}
       />
     </>
   );

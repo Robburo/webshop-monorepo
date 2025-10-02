@@ -2,6 +2,7 @@
 "use client";
 
 import { ProductResponseDto } from "@/services/productApi";
+import { useAuth } from "@/hooks/useAuth";
 
 interface Props {
   product: ProductResponseDto;
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function ProductDetail({ product, onAddToCart }: Props) {
+  const { user } = useAuth();
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       {/* Venstre side: bilde */}
@@ -24,19 +27,23 @@ export default function ProductDetail({ product, onAddToCart }: Props) {
           <p className="text-xl font-semibold">Pris: {product.price} kr</p>
           <p className="mb-6 text-sm text-gray-300">
             Antall igjen:{" "}
-            <span className={product.stock > 0 ? "text-green-400" : "text-red-500"}>
+            <span
+              className={product.stock > 0 ? "text-green-400" : "text-red-500"}
+            >
               {product.stock > 0 ? product.stock : "Utsolgt"}
             </span>
           </p>
         </div>
 
-        <button
-          onClick={onAddToCart}
-          className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 disabled:bg-gray-500"
-          disabled={product.stock <= 0}
-        >
-          {product.stock > 0 ? "Legg i handlekurv" : "Utsolgt"}
-        </button>
+        {user && (
+          <button
+            onClick={onAddToCart}
+            className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 disabled:bg-gray-500"
+            disabled={product.stock <= 0}
+          >
+            {product.stock > 0 ? "Legg i handlekurv" : "Utsolgt"}
+          </button>
+        )}
       </div>
     </div>
   );

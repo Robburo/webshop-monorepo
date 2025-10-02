@@ -42,19 +42,24 @@ export default function Cart() {
 
   // Debounced oppdatering av antall
   function handleUpdateQuantity(itemId: number, newQuantity: number) {
-    // Oppdater UI lokalt umiddelbart
+    console.log("Ny quantity:", newQuantity);
+    if (newQuantity <= 0) {
+      console.log("Fjerner produkt med id:", itemId);
+      handleRemove(itemId);
+      return;
+    }
+
     setCart((prev) =>
       prev.map((item) =>
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       )
     );
     toast.success("Handlekurven oppdatert!");
-    // Avbryt eventuelt eksisterende timeout for dette item
+
     if (timeoutIds[itemId]) {
       clearTimeout(timeoutIds[itemId]);
     }
 
-    // Sett ny timeout (500ms debounce)
     const id = setTimeout(async () => {
       try {
         const updated = await updateCartItem(itemId, newQuantity);
