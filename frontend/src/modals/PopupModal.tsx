@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface ModalProps {
   open: boolean;
@@ -10,12 +10,20 @@ interface ModalProps {
 }
 
 export default function ConfirmationModal({ open, onClose, title, message, autoClose }: ModalProps) {
+  const okButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (open && autoClose) {
       const t = setTimeout(() => onClose(), autoClose);
       return () => clearTimeout(t);
     }
   }, [open, autoClose, onClose]);
+
+  useEffect(() => {
+    if (open && okButtonRef.current) {
+      okButtonRef.current.focus();
+    }
+  }, [open]);
 
   if (!open) return null;
 
@@ -25,6 +33,7 @@ export default function ConfirmationModal({ open, onClose, title, message, autoC
         <h2 className="text-xl font-bold mb-4">{title}</h2>
         <p className="mb-4">{message}</p>
         <button
+        ref={okButtonRef}
           onClick={onClose}
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         >
