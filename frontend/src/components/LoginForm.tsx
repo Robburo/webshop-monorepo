@@ -42,10 +42,9 @@ export default function LoginForm() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="max-w-md mx-auto p-6 bg-gray-800 rounded shadow"
+        className="max-w-md p-6 mx-auto bg-gray-800 rounded shadow"
       >
-        <p>LoginForm.tsx</p>
-        <h2 className="text-xl font-bold mb-4">Logg inn</h2>
+        <h2 className="mb-4 text-xl font-bold">Logg inn</h2>
         {error && <p className="mb-2 text-red-500">{error}</p>}
         <input
           ref={nameInputRef}
@@ -53,18 +52,18 @@ export default function LoginForm() {
           placeholder="Brukernavn"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="block w-full mb-3 p-2 rounded bg-gray-700"
+          className="block w-full p-2 mb-3 bg-gray-700 rounded"
         />
         <input
           type="password"
           placeholder="Passord"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="block w-full mb-3 p-2 rounded bg-gray-700"
+          className="block w-full p-2 mb-3 bg-gray-700 rounded"
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
         >
           Logg inn
         </button>

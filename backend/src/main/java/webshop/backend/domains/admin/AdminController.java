@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import webshop.backend.domains.cart_item.dto.CartItemResponseDto;
 import webshop.backend.domains.cart_item.service.CartItemService;
 import webshop.backend.domains.order.dto.OrderDto;
-import webshop.backend.domains.user.dto.UserResponseDto;
-import webshop.backend.domains.user.service.UserService;
-import webshop.backend.domains.order.dto.OrderResponseDto;
 import webshop.backend.domains.order.service.OrderService;
 import webshop.backend.domains.product.dto.ProductRequestDto;
 import webshop.backend.domains.product.dto.ProductResponseDto;
 import webshop.backend.domains.product.service.ProductService;
+import webshop.backend.domains.user.dto.UserResponseDto;
+import webshop.backend.domains.user.service.UserService;
 
 import java.util.List;
 
@@ -104,7 +103,7 @@ public class AdminController {
     @ApiResponse(responseCode = "404", description = "Order not found")
     @PutMapping("/orders/{id}/status")
     public ResponseEntity<OrderDto> updateOrderStatus(@PathVariable Long id,
-                                                              @RequestParam String status) {
+                                                      @RequestParam String status) {
         log.debug("PUT /api/admin/orders/{}/status called by ADMIN with status={}", id, status);
         return ResponseEntity.ok(orderService.updateOrderStatus(id, status));
     }
