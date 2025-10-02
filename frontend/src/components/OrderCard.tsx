@@ -75,7 +75,7 @@ export default function OrderCard({ order, onStatusChange }: Props) {
         ))}
       </ul>
 
-      {/* Total alltid nederst */}
+      {/* Total */}
       <div className="pt-4 mt-auto border-t border-gray-700">
         <p className="text-sm text-gray-300">
           Total:{" "}
@@ -102,6 +102,16 @@ export default function OrderCard({ order, onStatusChange }: Props) {
           </button>
         </div>
       )}
+
+      {/* Se detaljer-knapp */}
+      <div className="mt-4">
+        <button
+          onClick={() => router.push(`/orders/${order.id}`)}
+          className="w-full px-3 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
+        >
+          Se detaljer
+        </button>
+      </div>
     </div>
   );
 }

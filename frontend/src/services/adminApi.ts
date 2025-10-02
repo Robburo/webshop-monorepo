@@ -35,10 +35,33 @@ export interface ProductResponseDto extends ProductRequestDto {
   id: number;
 }
 
-// --- Eksisterende metoder beholdes ---
-// getAllUsers, getUserById, deleteUser, getAllCartItems
+// Hent alle brukere (ADMIN)
+export async function getAllUsers(): Promise<UserResponseDto[]> {
+  return apiFetch<UserResponseDto[]>("/admin/users", { method: "GET" }, true);
+}
 
-// --- Nye metoder ---
+// Hent spesifikk bruker (ADMIN)
+export async function getUserById(id: number): Promise<UserResponseDto> {
+  return apiFetch<UserResponseDto>(
+    `/admin/users/${id}`,
+    { method: "GET" },
+    true
+  );
+}
+
+// Slett bruker (ADMIN)
+export async function deleteUser(id: number): Promise<void> {
+  return apiFetch<void>(`/admin/users/${id}`, { method: "DELETE" }, true);
+}
+
+// Hent alle handlekurv-items for alle brukere (ADMIN)
+export async function getAllCartItems(): Promise<CartItemResponseDto[]> {
+  return apiFetch<CartItemResponseDto[]>(
+    "/admin/cart_items",
+    { method: "GET" },
+    true
+  );
+}
 
 /** Oppdater en bruker (ADMIN-only) */
 export async function updateUser(
