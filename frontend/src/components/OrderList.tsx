@@ -18,9 +18,8 @@ export default function OrderList() {
 
   return (
     <section className="my-12">
-      <p>Orderlist.tsx</p>
-      <h2 className="text-2xl font-bold mb-6">Mine ordre</h2>
-      <div className="space-y-4">
+      <h2 className="flex justify-center mb-6 text-2xl font-bold">Mine ordre</h2>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {orders.map((order) => (
           <OrderCard key={order.id} order={order} />
         ))}

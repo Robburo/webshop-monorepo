@@ -30,7 +30,7 @@ export default function RegisterForm() {
   }
 
   useEffect(() => {
-    if (nameInputRef.current) {
+    if (nameInputRef.current != null && nameInputRef.current.value == "") {
       nameInputRef.current.focus();
     }
   });

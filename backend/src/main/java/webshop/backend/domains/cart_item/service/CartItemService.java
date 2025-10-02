@@ -17,6 +17,7 @@ import webshop.backend.domains.user.User;
 import webshop.backend.domains.user.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -78,13 +79,25 @@ public class CartItemService {
                     return new ProductNotFoundException(dto.productId());
                 });
 
-        CartItem item = new CartItem();
-        item.setUser(user);
-        item.setProduct(product);
-        item.setQuantity(dto.quantity());
+        // Sjekk om varen allerede finnes i cart
+        Optional<CartItem> existing = cartItemRepository.findByUserIdAndProductId(user.getId(), product.getId());
+
+        CartItem item;
+        if (existing.isPresent()) {
+            item = existing.get();
+            item.setQuantity(item.getQuantity() + dto.quantity());
+            log.info("Increased quantity for productId={} in cart for userId={} to {}",
+                    product.getId(), user.getId(), item.getQuantity());
+        } else {
+            item = new CartItem();
+            item.setUser(user);
+            item.setProduct(product);
+            item.setQuantity(dto.quantity());
+            log.info("Added new productId={} quantity={} to cart for userId={}",
+                    product.getId(), dto.quantity(), user.getId());
+        }
 
         CartItem saved = cartItemRepository.save(item);
-        log.info("Added productId={} quantity={} to cart for userId={} cartItemId={}", product.getId(), dto.quantity(), user.getId(), saved.getId());
         return CartItemMapper.toResponseDto(saved);
     }
 

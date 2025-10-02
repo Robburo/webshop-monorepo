@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/hooks/useAuth";
+import ToasterProvider from "@/components/Toast";
 
 export const metadata: Metadata = {
   title: "Webshop",
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="no" className="dark">
-      <body className="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+      <body className="flex flex-col min-h-screen text-gray-100 bg-gray-900">
         <AuthProvider>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto p-6">{children}</main>
-        <footer className="bg-gray-800 text-center py-4 text-sm text-gray-400">
+        <main className="flex-1 max-w-6xl p-6 mx-auto">{children}</main>
+        <ToasterProvider/>
+        <footer className="py-4 text-sm text-center text-gray-400 bg-gray-800">
           © {new Date().getFullYear()} Webshop. Alle rettigheter forbeholdt.
         </footer>
         </AuthProvider>

@@ -8,6 +8,7 @@ import {
   CartItemResponseDto,
 } from "@/services/cartApi";
 import CartItem from "./CartItem";
+import toast from "react-hot-toast";
 
 export default function Cart() {
   const [cart, setCart] = useState<CartItemResponseDto[]>([]);
@@ -33,6 +34,7 @@ export default function Cart() {
     try {
       await clearCart();
       setCart([]); // oppdater UI lokalt
+      toast.success("Handlekurven ble tømt!");
     } catch (err) {
       console.error("Kunne ikke tømme handlekurven:", err);
     }
@@ -46,7 +48,7 @@ export default function Cart() {
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       )
     );
-
+    toast.success("Handlekurven oppdatert!");
     // Avbryt eventuelt eksisterende timeout for dette item
     if (timeoutIds[itemId]) {
       clearTimeout(timeoutIds[itemId]);
@@ -71,19 +73,20 @@ export default function Cart() {
     try {
       await removeCartItem(itemId);
       setCart((prev) => prev.filter((item) => item.id !== itemId));
+      toast.success("Produkt fjernet!");
     } catch (err) {
       console.error("Kunne ikke fjerne vare:", err);
     }
   }
 
   return (
-    <div className="border-4 border-gray-800 p-8">
-      <h2 className="text-2xl font-bold mb-4">Handlekurv</h2>
+    <div className="p-8 border-4 border-gray-800">
+      <h2 className="mb-4 text-2xl font-bold">Handlekurv</h2>
       {cart.length === 0 ? (
         <p>Handlekurven er tom</p>
       ) : (
         <>
-          <ul className="space-y-4 mb-6">
+          <ul className="mb-6 space-y-4">
             {cart.map((item) => (
               <CartItem
                 key={item.id}
@@ -94,12 +97,12 @@ export default function Cart() {
             ))}
           </ul>
           <div className="flex justify-between">
-            <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+            <button className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">
               Bestill
             </button>
             <button
               onClick={handleClearCart}
-              className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+              className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
             >
               Tøm handlekurv
             </button>
