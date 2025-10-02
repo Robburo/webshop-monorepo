@@ -80,6 +80,23 @@ public class UserService {
         return UserMapper.toResponseDto(saved);
     }
 
+    public UserResponseDto updateUser(Long id, UserResponseDto dto) {
+        log.debug("Updating user with id={}", id);
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.warn("User not found with id={}", id);
+                    return new UserNotFoundException("User not found with id: " + id);
+                });
+
+        user.setUsername(dto.username());
+        user.setEmail(dto.email());
+        user.setRole(dto.role());
+
+        User updated = userRepository.save(user);
+        log.info("Updated user with id={} successfully", id);
+        return UserMapper.toResponseDto(updated);
+    }
+
     public void deleteUser(Long id) {
         log.debug("Deleting user with id={}", id);
 

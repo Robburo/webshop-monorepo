@@ -95,4 +95,17 @@ public class ProductService {
         productRepository.deleteById(id);
         log.info("Deleted product with id={}", id);
     }
+
+    public ProductResponseDto updateProductStock(Long id, int stock) {
+        log.debug("Updating stock for product id={} to {}", id, stock);
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.warn("Product not found with id={} when updating stock", id);
+                    return new ProductNotFoundException(id);
+                });
+        product.setStock(stock);
+        Product updated = productRepository.save(product);
+        log.info("Updated stock for product id={} to {}", id, stock);
+        return ProductMapper.toResponseDto(updated);
+    }
 }

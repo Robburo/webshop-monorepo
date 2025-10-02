@@ -140,4 +140,24 @@ public class OrderService {
 
         return OrderMapper.toDto(savedOrder);
     }
+
+    public List<OrderDto> getAllOrders() {
+        log.debug("Fetching all orders (ADMIN)");
+        return orderRepository.findAll()
+                .stream()
+                .map(OrderMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    public Object getSalesStatistics(String from, String to) {
+        log.debug("Fetching sales statistics from={} to={} (ADMIN)", from, to);
+        // TODO: Implementer faktisk statistikkberegning
+        return null;
+    }
+
+    public Object getTopProducts() {
+        log.debug("Fetching top products (ADMIN)");
+        // TODO: Implementer logikk for å hente mest solgte produkter
+        return null;
+    }
 }
