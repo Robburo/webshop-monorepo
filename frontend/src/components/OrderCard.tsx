@@ -1,10 +1,15 @@
-import { OrderDto } from "@/services/orderApi";
+import { OrderDto, updateOrderStatus } from "@/services/orderApi";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface Props {
   order: OrderDto;
+  onStatusChange?: (id: number, status: string) => void;
 }
 
-export default function OrderCard({ order }: Props) {
+export default function OrderCard({ order, onStatusChange }: Props) {
+  const router = useRouter();
+
   const statusColors: Record<string, string> = {
     PAID: "bg-green-600",
     PENDING: "bg-yellow-600",
@@ -12,10 +17,26 @@ export default function OrderCard({ order }: Props) {
     CANCELLED: "bg-red-600",
   };
 
-  const total = order.items.reduce(
-    (sum, i) => sum + i.price * i.quantity,
-    0
-  );
+  const total = order.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+  async function handleUpdate(status: string) {
+    try {
+      await updateOrderStatus(order.id, status);
+
+      toast.success(
+        status === "PAID" ? "Betaling fullført" : "Ordre kansellert"
+      );
+
+      if (onStatusChange) {
+        onStatusChange(order.id, status);
+      } else {
+        router.refresh();
+      }
+    } catch (err) {
+      console.error("Kunne ikke oppdatere ordre:", err);
+      toast.error("Feil ved oppdatering av ordre");
+    }
+  }
 
   return (
     <div className="flex flex-col p-6 transition bg-gray-800 shadow-md rounded-xl hover:shadow-lg">
@@ -23,7 +44,9 @@ export default function OrderCard({ order }: Props) {
       <div className="flex items-center justify-between mb-2">
         <h3 className="text-lg font-semibold">Ordre #{order.id}</h3>
         <span
-          className={`text-xs px-3 py-1 rounded-full text-white ${statusColors[order.status] || "bg-gray-600"}`}
+          className={`text-xs px-3 py-1 rounded-full text-white ${
+            statusColors[order.status] || "bg-gray-600"
+          }`}
         >
           {order.status}
         </span>
@@ -45,7 +68,9 @@ export default function OrderCard({ order }: Props) {
               {item.productName}{" "}
               <span className="p-1 text-gray-400">({item.quantity} stk)</span>
             </span>
-            <span className="font-semibold">{item.price} kr</span>
+            <span className="font-semibold">
+              {(item.price * item.quantity).toFixed(2)} kr
+            </span>
           </li>
         ))}
       </ul>
@@ -59,6 +84,24 @@ export default function OrderCard({ order }: Props) {
           </span>
         </p>
       </div>
+
+      {/* Handlinger for PENDING */}
+      {order.status === "PENDING" && (
+        <div className="flex justify-end gap-2 mt-4">
+          <button
+            onClick={() => router.push(`/checkout/payment?orderId=${order.id}`)}
+            className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Betal
+          </button>
+          <button
+            onClick={() => handleUpdate("CANCELLED")}
+            className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Kanseller
+          </button>
+        </div>
+      )}
     </div>
   );
 }

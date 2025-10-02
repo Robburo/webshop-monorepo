@@ -10,6 +10,7 @@ import webshop.backend.domains.cart_item.CartItem;
 import webshop.backend.domains.cart_item.repository.CartItemRepository;
 import webshop.backend.domains.order.Order;
 import webshop.backend.domains.order.OrderItem;
+import webshop.backend.domains.order.dto.CheckoutOrderDto;
 import webshop.backend.domains.order.dto.OrderDto;
 import webshop.backend.domains.order.mapper.OrderMapper;
 import webshop.backend.domains.order.repository.OrderRepository;
@@ -41,7 +42,7 @@ public class OrderService {
         this.productRepository = productRepository;
     }
 
-    public OrderDto checkout() {
+    public OrderDto checkout(CheckoutOrderDto request) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         log.debug("Checkout initiated for username={}", username);
 
@@ -61,6 +62,12 @@ public class OrderService {
         order.setUser(user);
         order.setCreatedAt(LocalDateTime.now());
         order.setStatus("PENDING");
+        order.setRecipientName(request.recipientName());
+        order.setStreet(request.street());
+        order.setPostalCode(request.postalCode());
+        order.setCity(request.city());
+        order.setCountry(request.country());
+
         order = orderRepository.save(order);
         log.info("Created new order id={} for userId={}", order.getId(), user.getId());
 
@@ -73,6 +80,7 @@ public class OrderService {
             orderItem.setPrice(product.getPrice());
 
             order.getItems().add(orderItem);
+
             product.setStock(product.getStock() - cartItem.getQuantity());
             productRepository.save(product);
 

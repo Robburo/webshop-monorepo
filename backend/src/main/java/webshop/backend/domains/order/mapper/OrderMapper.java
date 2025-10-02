@@ -14,6 +14,11 @@ public class OrderMapper {
                 order.getUser() != null ? order.getUser().getId() : null,
                 order.getCreatedAt(),
                 order.getStatus(),
+                order.getRecipientName(),
+                order.getStreet(),
+                order.getPostalCode(),
+                order.getCity(),
+                order.getCountry(),
                 order.getItems() != null
                         ? order.getItems().stream()
                         .map(OrderMapper::toItemDto)

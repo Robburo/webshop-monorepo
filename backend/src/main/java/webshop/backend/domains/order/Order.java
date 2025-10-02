@@ -20,12 +20,19 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     private LocalDateTime createdAt;
 
     private String status; // e.g. PENDING, PAID, SHIPPED
+
+    // Delivery information
+    private String recipientName;
+    private String street;
+    private String postalCode;
+    private String city;
+    private String country;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items = new ArrayList<>();

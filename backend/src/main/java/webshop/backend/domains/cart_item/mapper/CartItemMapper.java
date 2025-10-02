@@ -10,7 +10,8 @@ public class CartItemMapper {
                 item.getProduct() != null ? item.getProduct().getId() : null,
                 item.getProduct() != null ? item.getProduct().getName() : null,
                 item.getQuantity(),
-                item.getUser() != null ? item.getUser().getId() : null
+                item.getUser() != null ? item.getUser().getId() : null,
+                item.getProduct() != null ? item.getProduct().getPrice() : null
         );
     }
 }

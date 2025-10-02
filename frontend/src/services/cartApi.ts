@@ -7,6 +7,7 @@ export interface CartItemResponseDto {
   productName: string;
   quantity: number;
   userId: number;
+  price: number; // backend BigDecimal → JSON number
 }
 
 export interface CartItemCreateDto {

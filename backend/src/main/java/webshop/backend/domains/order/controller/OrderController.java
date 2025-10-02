@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import webshop.backend.domains.order.dto.CheckoutOrderDto;
 import webshop.backend.domains.order.dto.OrderDto;
 import webshop.backend.domains.order.service.OrderService;
 
@@ -26,9 +27,9 @@ public class OrderController {
     @Operation(summary = "Checkout and create a new order")
     @ApiResponse(responseCode = "200", description = "Order created successfully")
     @PostMapping("/checkout")
-    public ResponseEntity<OrderDto> checkout() {
+    public ResponseEntity<OrderDto> checkout(@RequestBody CheckoutOrderDto request) {
         log.debug("POST /api/orders/checkout called");
-        return ResponseEntity.ok(orderService.checkout());
+        return ResponseEntity.ok(orderService.checkout(request));
     }
 
     @Operation(summary = "Get all orders for the current user")

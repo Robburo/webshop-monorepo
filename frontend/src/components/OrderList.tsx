@@ -18,10 +18,20 @@ export default function OrderList() {
 
   return (
     <section className="my-12">
-      <h2 className="flex justify-center mb-6 text-2xl font-bold">Mine ordre</h2>
+      <h2 className="flex justify-center mb-6 text-2xl font-bold">
+        Mine ordre
+      </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {orders.map((order) => (
-          <OrderCard key={order.id} order={order} />
+          <OrderCard
+            key={order.id}
+            order={order}
+            onStatusChange={(id, status) => {
+              setOrders((prev) =>
+                prev.map((o) => (o.id === id ? { ...o, status } : o))
+              );
+            }}
+          />
         ))}
       </div>
     </section>

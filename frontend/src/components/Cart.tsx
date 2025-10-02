@@ -9,12 +9,19 @@ import {
 } from "@/services/cartApi";
 import CartItem from "./CartItem";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function Cart() {
   const [cart, setCart] = useState<CartItemResponseDto[]>([]);
   const [timeoutIds, setTimeoutIds] = useState<Record<number, NodeJS.Timeout>>(
     {}
   );
+  const cartTotal = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const formattedTotal = cartTotal.toFixed(2);
+  const router = useRouter();
 
   // Hent cart items ved første render
   useEffect(() => {
@@ -33,12 +40,20 @@ export default function Cart() {
   async function handleClearCart() {
     try {
       await clearCart();
-      setCart([]); // oppdater UI lokalt
+      setCart([]);
       toast.success("Handlekurven ble tømt!");
     } catch (err) {
       console.error("Kunne ikke tømme handlekurven:", err);
     }
   }
+
+  async function handleCheckoutCart() {
+  try {
+    router.push("/checkout/delivery");
+  } catch (err) {
+    console.error("Kunne ikke gå til checkout", err);
+  }
+}
 
   // Debounced oppdatering av antall
   function handleUpdateQuantity(itemId: number, newQuantity: number) {
@@ -101,13 +116,19 @@ export default function Cart() {
               />
             ))}
           </ul>
+          <div className="mb-4 font-bold text-lg flex justify-center">
+            Totalpris: {formattedTotal} kr
+          </div>
           <div className="flex justify-between">
-            <button className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">
+            <button
+              onClick={handleCheckoutCart}
+              className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700"
+            >
               Bestill
             </button>
             <button
               onClick={handleClearCart}
-              className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
+              className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-900"
             >
               Tøm handlekurv
             </button>

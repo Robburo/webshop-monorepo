@@ -14,16 +14,33 @@ export interface OrderDto {
   userId: number;
   createdAt: string; // ISO datetime
   status: string;
+
+  recipientName: string;
+  street: string;
+  postalCode: string;
+  city: string;
+  country: string;
+
   items: OrderItemDto[];
 }
 
 /**
  * Opprett en ny ordre basert på handlekurven (checkout)
  */
-export async function checkout(): Promise<OrderDto> {
+export async function checkout(data: {
+  recipientName: string;
+  street: string;
+  postalCode: string;
+  city: string;
+  country: string;
+}): Promise<OrderDto> {
   return apiFetch<OrderDto>(
     "/orders/checkout",
-    { method: "POST" },
+    {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    },
     true
   );
 }
@@ -59,7 +76,9 @@ export async function updateOrderStatus(
 /**
  * Hent alle order items for en ordre
  */
-export async function getItemsByOrder(orderId: number): Promise<OrderItemDto[]> {
+export async function getItemsByOrder(
+  orderId: number
+): Promise<OrderItemDto[]> {
   return apiFetch<OrderItemDto[]>(`/order-items/order/${orderId}`, {}, true);
 }
 

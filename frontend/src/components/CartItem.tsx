@@ -7,11 +7,17 @@ interface Props {
 }
 
 export default function CartItem({ item, onUpdateQuantity, onRemove }: Props) {
+  const total = (item.price * item.quantity).toFixed(2);
+  const price = item.price.toFixed(2);
+
   return (
     <li className="flex items-start justify-between p-4 bg-gray-800 rounded shadow">
       <div className="w-auto max-w-xs px-5 break-words">
         <h3 className="font-semibold">{item.productName}</h3>
+
+        <p className="text-sm text-gray-400">Pris: {price} kr</p>
         <p className="text-sm text-gray-400">Antall: {item.quantity}</p>
+        <p className="text-sm text-gray-400">Totalpris: {total} kr</p>
       </div>
       <div className="flex space-x-2">
         <button
