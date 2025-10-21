@@ -59,7 +59,7 @@ public class ProductService {
         }
         Product product = ProductMapper.toEntity(dto, category);
         Product saved = productRepository.save(product);
-        log.info("Created new product with id={} and name={}", saved.getId(), saved.getName());
+        log.info("Created new product with id={} and name={} for category={}", saved.getId(), saved.getName(), saved.getCategory().getName());
         return ProductMapper.toResponseDto(saved);
     }
 

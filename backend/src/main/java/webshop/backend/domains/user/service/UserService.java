@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import webshop.backend.common.exception.UserAlreadyExistsException;
 import webshop.backend.common.exception.UserDeletionNotAllowedException;
 import webshop.backend.common.exception.UserNotFoundException;
 import webshop.backend.domains.cart_item.repository.CartItemRepository;
@@ -69,14 +70,27 @@ public class UserService {
     }
 
     public UserResponseDto registerUser(UserRequestDto dto) {
-        log.debug("Registering new user with username={}", dto.username());
+        log.debug("Registering new user with username={} and email={}", dto.username(), dto.email());
+
+        if (userRepository.existsByUsernameIgnoreCase(dto.username())) {
+            log.warn("User with that username already exists");
+            throw new UserAlreadyExistsException("Username already exists: " + dto.username());
+        }
+
+        if (userRepository.existsByEmailIgnoreCase(dto.email())) {
+            log.warn("User with that email already exists");
+            throw new UserAlreadyExistsException("Email already exists:" + dto.email());
+        }
+
         User user = UserMapper.toEntity(dto, passwordEncoder);
         user.setPassword(passwordEncoder.encode(dto.password()));
+
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("ROLE_USER");
         }
+
         User saved = userRepository.save(user);
-        log.info("Registered new user with id={} and username={}", saved.getId(), saved.getUsername());
+        log.info("Registered new user with id={}, username={} and email={}", saved.getId(), saved.getUsername(), saved.getEmail());
         return UserMapper.toResponseDto(saved);
     }
 
@@ -87,6 +101,18 @@ public class UserService {
                     log.warn("User not found with id={}", id);
                     return new UserNotFoundException("User not found with id: " + id);
                 });
+
+        if (userRepository.existsByUsernameIgnoreCase(dto.username()) &&
+                !user.getUsername().equalsIgnoreCase(dto.username())) {
+            log.warn("Username already taken");
+            throw new UserAlreadyExistsException("Username already taken");
+        }
+
+        if (userRepository.existsByEmailIgnoreCase(dto.email()) &&
+                !user.getEmail().equalsIgnoreCase(dto.email())) {
+            log.warn("Email already exists");
+            throw new UserAlreadyExistsException("Email already exists");
+        }
 
         user.setUsername(dto.username());
         user.setEmail(dto.email());

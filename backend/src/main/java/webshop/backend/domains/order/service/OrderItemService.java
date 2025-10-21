@@ -3,6 +3,7 @@ package webshop.backend.domains.order.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import webshop.backend.common.exception.OrderItemNotFoundException;
+import webshop.backend.common.exception.OrderNotFoundException;
 import webshop.backend.domains.order.dto.OrderItemDto;
 import webshop.backend.domains.order.repository.OrderItemRepository;
 
@@ -30,6 +31,12 @@ public class OrderItemService {
                         item.getPrice()
                 ))
                 .collect(Collectors.toList());
+
+        if(items.isEmpty()) {
+            log.warn("No order found for orderId={}", orderId);
+            throw new OrderNotFoundException(orderId);
+        }
+
         log.info("Fetched {} order items for orderId={}", items.size(), orderId);
         return items;
     }
