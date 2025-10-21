@@ -1,5 +1,3 @@
-package webshop.backend;
-
 public class TodoList {
     // TODO: Security
     // - Store secrets (DB, JWT secret) in environment variables or Vault, not in code
