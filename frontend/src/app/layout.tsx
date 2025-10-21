@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/hooks/useAuth";
 import ToasterProvider from "@/components/Toast";
+import BackButton from "@/components/BackButton";
 
 export const metadata: Metadata = {
   title: "Webshop",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex flex-col min-h-screen text-gray-100 bg-gray-900">
         <AuthProvider>
         <Navbar />
+        <BackButton />
         <main className="flex-1 max-w-6xl p-6 mx-auto">{children}</main>
         <ToasterProvider/>
         <footer className="py-4 text-sm text-center text-gray-400 bg-gray-800">

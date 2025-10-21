@@ -1,4 +1,3 @@
-// components/ProductDetail.tsx
 "use client";
 
 import { ProductResponseDto } from "@/services/productApi";
