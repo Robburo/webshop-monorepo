@@ -49,4 +49,20 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
+
+    public String generateRefreshToken(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .claim("type", "refresh")
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expiration * 24))
+                .signWith(key)
+                .compact();
+    }
+
+    public boolean isRefreshToken(String token) {
+        Claims claims = parseClaims(token);
+        String type = claims.get("type", String.class);
+        return "refresh".equals(type);
+    }
 }
