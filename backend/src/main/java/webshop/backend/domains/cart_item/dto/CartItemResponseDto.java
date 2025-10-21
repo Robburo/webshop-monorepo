@@ -9,4 +9,5 @@ public record CartItemResponseDto(
         int quantity,
         Long userId,
         BigDecimal price
-) {}
+) {
+}

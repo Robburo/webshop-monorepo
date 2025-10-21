@@ -43,7 +43,8 @@ public class SecurityConfig {
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                .httpBasic(basic -> {});
+                .httpBasic(basic -> {
+                });
 
         http.addFilterBefore(new JwtFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
 

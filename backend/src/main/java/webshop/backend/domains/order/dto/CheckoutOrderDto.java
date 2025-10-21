@@ -7,4 +7,5 @@ public record CheckoutOrderDto(
         String postalCode,
         String city,
         String country
-) {}
+) {
+}

@@ -9,4 +9,5 @@ public record ProductDto(
         BigDecimal price,
         int stock,
         Long categoryId
-) {}
+) {
+}

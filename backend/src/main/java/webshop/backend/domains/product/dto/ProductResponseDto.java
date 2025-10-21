@@ -10,4 +10,5 @@ public record ProductResponseDto(
         int stock,
         Long categoryId,
         String categoryName
-) {}
+) {
+}

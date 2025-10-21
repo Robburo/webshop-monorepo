@@ -14,4 +14,5 @@ public record OrderDto(
         String city,
         String country,
         List<OrderItemDto> items
-) {}
+) {
+}

@@ -8,4 +8,5 @@ public record ProductRequestDto(
         BigDecimal price,
         int stock,
         Long categoryId
-) {}
+) {
+}
