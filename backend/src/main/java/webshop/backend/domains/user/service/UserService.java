@@ -106,7 +106,10 @@ public class UserService {
                     return new UserNotFoundException("User not found with id " + id);
                 });
 
-        // Check for existing references before deleting
+        if (user.getRole().equalsIgnoreCase("ROLE_ADMIN")) {
+            throw new UserDeletionNotAllowedException("Cannot delete an admin account");
+        }
+
         boolean hasCartItems = cartItemRepository.existsByUserId(id);
         if (hasCartItems) {
             log.warn("Cannot delete user with id={} because it still has cart items", id);

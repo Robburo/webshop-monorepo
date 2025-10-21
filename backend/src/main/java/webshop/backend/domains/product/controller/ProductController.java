@@ -42,29 +42,29 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Create a new product")
     @ApiResponse(responseCode = "200", description = "Product created")
     @PostMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ProductResponseDto> createProduct(@RequestBody ProductRequestDto productDto) {
         log.debug("POST /api/products called");
         return ResponseEntity.ok(productService.createProduct(productDto));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Update a product")
     @ApiResponse(responseCode = "200", description = "Product updated")
     @ApiResponse(responseCode = "404", description = "Product not found")
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ProductResponseDto> updateProduct(@PathVariable Long id, @RequestBody ProductRequestDto productDto) {
         log.debug("PUT /api/products/{} called", id);
         return ResponseEntity.ok(productService.updateProduct(id, productDto));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Delete a product")
     @ApiResponse(responseCode = "204", description = "Product deleted")
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         log.debug("DELETE /api/products/{} called", id);
         productService.deleteProduct(id);

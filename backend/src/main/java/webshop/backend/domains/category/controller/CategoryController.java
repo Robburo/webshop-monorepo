@@ -42,19 +42,19 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getCategoryById(id));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Create a new category")
     @ApiResponse(responseCode = "200", description = "Category created successfully")
     @PostMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CategoryResponseDto> createCategory(@RequestBody CategoryCreateDto categoryDto) {
         log.debug("POST /api/categories called with payload: {}", categoryDto);
         return ResponseEntity.ok(categoryService.createCategory(categoryDto));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Delete category")
     @ApiResponse(responseCode = "204", description = "Category deleted successfully")
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
         log.debug("DELETE /api/categories/{} called", id);
         categoryService.deleteCategory(id);

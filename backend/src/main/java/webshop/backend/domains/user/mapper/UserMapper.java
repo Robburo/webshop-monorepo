@@ -17,7 +17,7 @@ public class UserMapper {
 
     public static User toEntity(UserRequestDto dto, PasswordEncoder passwordEncoder) {
         User user = new User();
-        user.setUsername(dto.username());
+        user.setUsername(dto.username().toLowerCase());
         user.setEmail(dto.email());
         user.setPassword(passwordEncoder.encode(dto.password()));
         user.setRole(dto.role() != null ? dto.role() : "ROLE_USER");

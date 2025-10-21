@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import webshop.backend.common.exception.UserDeletionNotAllowedException;
 import webshop.backend.domains.user.dto.UserRequestDto;
 import webshop.backend.domains.user.dto.UserResponseDto;
 import webshop.backend.domains.user.service.UserService;
@@ -34,23 +35,42 @@ public class UserController {
         return ResponseEntity.ok(userService.getCurrentUser());
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping
     @Operation(summary = "Get all users", description = "Fetch a list of all registered users")
     @ApiResponse(responseCode = "200", description = "List of users returned successfully")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<UserResponseDto>> getAllUsers() {
         log.debug("GET /api/users called");
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/{id}")
     @Operation(summary = "Get user by ID", description = "Fetch user details by their ID")
     @ApiResponse(responseCode = "200", description = "User details returned successfully")
     @ApiResponse(responseCode = "404", description = "User not found")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<UserResponseDto> getUserById(@PathVariable Long id) {
         log.debug("GET /api/users/{} called", id);
         return ResponseEntity.ok(userService.getUserById(id));
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete user by ID", description = "Delete a user by ID")
+    @ApiResponse(responseCode = "201", description = "User details returned successfully")
+    @ApiResponse(responseCode = "404", description = "User not found")
+    public ResponseEntity<UserResponseDto> deleteUserById(@PathVariable Long id) {
+        log.info("DELETE /api/users/{} called", id);
+        try {
+            userService.deleteUser(id);
+            log.info("User with id {} deleted successfully", id);
+            return ResponseEntity.noContent().build();
+        } catch (UserDeletionNotAllowedException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Unexpected error deleting user {}", id, e);
+            throw e;
+        }
     }
 
     // TODO Verify e-mail before registering user
