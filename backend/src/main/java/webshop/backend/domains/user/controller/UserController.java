@@ -3,6 +3,7 @@ package webshop.backend.domains.user.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,10 +50,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    // TODO Verify e-mail before registering user
     @PostMapping("/register")
     @Operation(summary = "Register user", description = "Register a new user with username, email, and password")
     @ApiResponse(responseCode = "200", description = "User registered successfully")
-    public ResponseEntity<UserResponseDto> registerUser(@RequestBody UserRequestDto userDto) {
+    public ResponseEntity<UserResponseDto> registerUser(@Valid @RequestBody UserRequestDto userDto) {
         log.debug("POST /api/users/register called");
         return ResponseEntity.ok(userService.registerUser(userDto));
     }
