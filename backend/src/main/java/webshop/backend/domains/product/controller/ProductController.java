@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import webshop.backend.domains.product.dto.ProductRequestDto;
 import webshop.backend.domains.product.dto.ProductResponseDto;
@@ -44,6 +45,7 @@ public class ProductController {
     @Operation(summary = "Create a new product")
     @ApiResponse(responseCode = "200", description = "Product created")
     @PostMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ProductResponseDto> createProduct(@RequestBody ProductRequestDto productDto) {
         log.debug("POST /api/products called");
         return ResponseEntity.ok(productService.createProduct(productDto));
@@ -53,6 +55,7 @@ public class ProductController {
     @ApiResponse(responseCode = "200", description = "Product updated")
     @ApiResponse(responseCode = "404", description = "Product not found")
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ProductResponseDto> updateProduct(@PathVariable Long id, @RequestBody ProductRequestDto productDto) {
         log.debug("PUT /api/products/{} called", id);
         return ResponseEntity.ok(productService.updateProduct(id, productDto));
@@ -61,6 +64,7 @@ public class ProductController {
     @Operation(summary = "Delete a product")
     @ApiResponse(responseCode = "204", description = "Product deleted")
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         log.debug("DELETE /api/products/{} called", id);
         productService.deleteProduct(id);

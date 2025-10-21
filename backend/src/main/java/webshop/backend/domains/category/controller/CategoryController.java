@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import webshop.backend.domains.category.dto.CategoryCreateDto;
 import webshop.backend.domains.category.dto.CategoryResponseDto;
@@ -44,6 +45,7 @@ public class CategoryController {
     @Operation(summary = "Create a new category")
     @ApiResponse(responseCode = "200", description = "Category created successfully")
     @PostMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CategoryResponseDto> createCategory(@RequestBody CategoryCreateDto categoryDto) {
         log.debug("POST /api/categories called with payload: {}", categoryDto);
         return ResponseEntity.ok(categoryService.createCategory(categoryDto));
@@ -52,6 +54,7 @@ public class CategoryController {
     @Operation(summary = "Delete category")
     @ApiResponse(responseCode = "204", description = "Category deleted successfully")
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
         log.debug("DELETE /api/categories/{} called", id);
         categoryService.deleteCategory(id);
