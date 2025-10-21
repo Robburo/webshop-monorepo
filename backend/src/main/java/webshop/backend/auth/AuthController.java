@@ -41,4 +41,6 @@ public class AuthController {
         String jwt = jwtService.generateToken(username, roles);
         return ResponseEntity.ok(new TokenResponse(jwt));
     }
+
+    //TODO Add refresh token endpoint
 }

@@ -1,5 +1,6 @@
 package webshop.backend.auth;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
@@ -41,15 +42,11 @@ public class JwtService {
         return token;
     }
 
-    public String validateToken(String token) {
-        log.info("Validating JWT");
-        String subject = Jwts.parserBuilder()
+    public Claims parseClaims(String token) {
+        return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
                 .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-        log.info("JWT validated successfully for user '{}'", subject);
-        return subject;
+                .getBody();
     }
 }

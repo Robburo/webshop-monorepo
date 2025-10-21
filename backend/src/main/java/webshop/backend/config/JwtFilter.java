@@ -1,17 +1,22 @@
 package webshop.backend.config;
 
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.lang.NonNull;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import webshop.backend.auth.JwtService;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -24,33 +29,35 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
                                     @NonNull HttpServletResponse response,
-                                    @NonNull FilterChain filterChain) throws ServletException, IOException {
+                                    @NonNull FilterChain filterChain)
+            throws ServletException, IOException {
+
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-        // TODO Add roles
+
         if (header != null && header.startsWith("Bearer ")) {
             String token = header.substring(7);
             try {
-                String username = jwtService.validateToken(token);
+                Claims claims = jwtService.parseClaims(token);
+                String username = claims.getSubject();
+                @SuppressWarnings("unchecked")
+                List<String> roles = claims.get("roles", List.class);
 
-                AbstractAuthenticationToken auth = new AbstractAuthenticationToken(null) {
-                    @Override
-                    public Object getCredentials() {
-                        return null;
-                    }
+                List<GrantedAuthority> authorities = roles == null ? List.of()
+                        : roles.stream()
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                        .collect(Collectors.toList());
 
-                    @Override
-                    public Object getPrincipal() {
-                        return username;
-                    }
-                };
-                auth.setAuthenticated(true);
+                UsernamePasswordAuthenticationToken auth =
+                        new UsernamePasswordAuthenticationToken(username, null, authorities);
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
+
             } catch (Exception e) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return;
             }
         }
+
         filterChain.doFilter(request, response);
     }
 

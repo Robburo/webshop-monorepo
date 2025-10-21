@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -17,11 +19,11 @@ public class GlobalExceptionHandler {
 
     private ApiError buildError(HttpStatus status, String message, HttpServletRequest request) {
         return new ApiError(
-                LocalDateTime.now(),
                 status.value(),
                 status.getReasonPhrase(),
                 message,
-                request.getRequestURI()
+                request.getRequestURI(),
+                LocalDateTime.now()
         );
     }
 
@@ -78,6 +80,15 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiError> HandleUserDeletionNotAllowed(UserDeletionNotAllowedException ex, HttpServletRequest request) {
         log.error("UserDeletionNotAllowedException at {}: {}", request.getRequestURI(), ex.getMessage(), ex);
         return ResponseEntity.badRequest().body(buildError(HttpStatus.BAD_REQUEST, ex.getMessage(), request));
+    }
+
+    @ExceptionHandler(AuthorizationDeniedException.class)
+    public ResponseEntity<ApiError> handleAuthorizationDenied(AuthorizationDeniedException ex, HttpServletRequest request) {
+        log.warn("AuthorizationDeniedException at {}: {}", request.getRequestURI(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(buildError(HttpStatus.FORBIDDEN,
+                        "You do not have access to this resource.",
+                        request));
     }
 
     @ExceptionHandler(Exception.class)

@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import webshop.backend.domains.user.dto.UserRequestDto;
 import webshop.backend.domains.user.dto.UserResponseDto;
@@ -36,6 +37,7 @@ public class UserController {
     @GetMapping
     @Operation(summary = "Get all users", description = "Fetch a list of all registered users")
     @ApiResponse(responseCode = "200", description = "List of users returned successfully")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<UserResponseDto>> getAllUsers() {
         log.debug("GET /api/users called");
         return ResponseEntity.ok(userService.getAllUsers());
@@ -45,6 +47,7 @@ public class UserController {
     @Operation(summary = "Get user by ID", description = "Fetch user details by their ID")
     @ApiResponse(responseCode = "200", description = "User details returned successfully")
     @ApiResponse(responseCode = "404", description = "User not found")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<UserResponseDto> getUserById(@PathVariable Long id) {
         log.debug("GET /api/users/{} called", id);
         return ResponseEntity.ok(userService.getUserById(id));

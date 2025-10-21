@@ -33,7 +33,6 @@ public class TodoList {
     // - Add API tests with RestAssured for major endpoints
 
     // TODO: Database & Persistence
-    // - Add Flyway or Liquibase for DB migrations
     // - Use soft deletes where appropriate (e.g., orders)
     // - Index frequently queried columns (username, orderId, productId)
 
