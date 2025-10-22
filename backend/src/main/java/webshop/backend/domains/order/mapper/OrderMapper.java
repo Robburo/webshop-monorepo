@@ -13,7 +13,7 @@ public class OrderMapper {
                 order.getId(),
                 order.getUser() != null ? order.getUser().getId() : null,
                 order.getCreatedAt(),
-                order.getStatus(),
+                order.getStatus().name(),
                 order.getRecipientName(),
                 order.getStreet(),
                 order.getPostalCode(),

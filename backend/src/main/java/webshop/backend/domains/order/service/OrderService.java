@@ -12,6 +12,7 @@ import webshop.backend.domains.order.Order;
 import webshop.backend.domains.order.OrderItem;
 import webshop.backend.domains.order.dto.CheckoutOrderDto;
 import webshop.backend.domains.order.dto.OrderDto;
+import webshop.backend.domains.order.enums.OrderStatus;
 import webshop.backend.domains.order.mapper.OrderMapper;
 import webshop.backend.domains.order.repository.OrderRepository;
 import webshop.backend.domains.product.Product;
@@ -61,7 +62,7 @@ public class OrderService {
         Order order = new Order();
         order.setUser(user);
         order.setCreatedAt(LocalDateTime.now());
-        order.setStatus("PENDING");
+        order.setStatus(OrderStatus.PENDING);
         order.setRecipientName(request.recipientName());
         order.setStreet(request.street());
         order.setPostalCode(request.postalCode());
@@ -142,7 +143,7 @@ public class OrderService {
                     return new OrderNotFoundException(id);
                 });
 
-        order.setStatus(status);
+        order.setStatus(OrderStatus.valueOf(status));
         Order savedOrder = orderRepository.save(order);
         log.info("Updated orderId={} to status={}", id, status);
 

@@ -12,6 +12,7 @@ import webshop.backend.domains.order.repository.OrderRepository;
 import webshop.backend.domains.user.User;
 import webshop.backend.domains.user.dto.UserRequestDto;
 import webshop.backend.domains.user.dto.UserResponseDto;
+import webshop.backend.domains.user.enums.UserRole;
 import webshop.backend.domains.user.mapper.UserMapper;
 import webshop.backend.domains.user.repository.UserRepository;
 
@@ -85,8 +86,8 @@ public class UserService {
         User user = UserMapper.toEntity(dto, passwordEncoder);
         user.setPassword(passwordEncoder.encode(dto.password()));
 
-        if (user.getRole() == null || user.getRole().isEmpty()) {
-            user.setRole("ROLE_USER");
+        if (user.getRole() == null) {
+            user.setRole(UserRole.ROLE_USER);
         }
 
         User saved = userRepository.save(user);
@@ -116,7 +117,7 @@ public class UserService {
 
         user.setUsername(dto.username());
         user.setEmail(dto.email());
-        user.setRole(dto.role());
+        user.setRole(UserRole.valueOf(dto.role()));
 
         User updated = userRepository.save(user);
         log.info("Updated user with id={} successfully", id);
@@ -132,7 +133,7 @@ public class UserService {
                     return new UserNotFoundException("User not found with id " + id);
                 });
 
-        if (user.getRole().equalsIgnoreCase("ROLE_ADMIN")) {
+        if (user.getRole().name().equalsIgnoreCase(UserRole.ROLE_ADMIN.name())) {
             throw new UserDeletionNotAllowedException("Cannot delete an admin account");
         }
 
