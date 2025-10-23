@@ -4,6 +4,7 @@ import io.github.bucket4j.Bucket;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -17,16 +18,16 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * IP-based rate limiting for open API endpoints using Bucket4j.
  */
+@Slf4j
 @Component
 public class RateLimitFilter implements Filter {
 
-    private static final Logger log = LoggerFactory.getLogger(RateLimitFilter.class);
     private final Map<String, Bucket> buckets = new ConcurrentHashMap<>();
 
     private Bucket createNewBucket() {
         return Bucket.builder()
                 .addLimit(limit -> limit
-                        .capacity(50) // maximum number of tokens
+                        .capacity(3) // maximum number of tokens
                         .refillIntervally(50, Duration.ofMinutes(1)) // tokens per minute
                 )
                 .build();
