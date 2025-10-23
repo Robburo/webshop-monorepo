@@ -6,7 +6,7 @@ interface ModalProps {
   onClose: () => void;
   title: string;
   message: string | ReactNode;
-  autoClose?: number; // ms, optional
+  autoClose?: number;
 }
 
 export default function ConfirmationModal({ open, onClose, title, message, autoClose }: ModalProps) {

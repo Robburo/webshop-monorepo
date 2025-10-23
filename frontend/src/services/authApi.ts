@@ -1,17 +1,17 @@
 import { apiFetch } from "./apiClient";
 
-interface TokenResponse {
+interface TokenPairResponse {
   token: string;
+  refreshToken: string;
 }
 
 /**
  * Logg inn med username/password og hent JWT-token
  */
-export async function login(username: string, password: string): Promise<string> {
+export async function login(username: string, password: string): Promise<TokenPairResponse> {
   const basicAuth = btoa(`${username}:${password}`);
 
-  // kall apiClient og forvent et objekt { token: string }
-  const data = await apiFetch<TokenResponse>(
+  const data = await apiFetch<TokenPairResponse>(
     "/auth/token",
     {
       method: "POST",
@@ -22,5 +22,5 @@ export async function login(username: string, password: string): Promise<string>
     false // ingen JWT, kun Basic Auth
   );
 
-  return data.token;
+  return data;
 }

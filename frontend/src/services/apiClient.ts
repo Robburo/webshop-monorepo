@@ -1,5 +1,4 @@
 // Standard base-URL for backend-API.
-// Bruk NEXT_PUBLIC_API_URL i .env.local hvis du kjører i ulike miljøer.
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
 
 /**
@@ -15,7 +14,7 @@ export async function apiFetch<T>(
   options: RequestInit = {},
   requireAuth: boolean = false
 ): Promise<T> {
-  // Bruk Record<string, string> for å unngå TS-feil ved setting av headers
+ 
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     ...(options.headers as Record<string, string>),
@@ -41,7 +40,6 @@ export async function apiFetch<T>(
   if (!res.ok) {
     let errorMessage = `API error: ${res.status}`;
     try {
-      // Backend sender ofte en JSON med "message"
       const errorData = await res.json();
       if (errorData.message) {
         errorMessage = errorData.message;
