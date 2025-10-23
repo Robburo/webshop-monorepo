@@ -59,19 +59,24 @@ public class OrderService {
             throw new EmptyCartException();
         }
 
-        Order order = new Order();
-        order.setUser(user);
-        order.setCreatedAt(LocalDateTime.now());
-        order.setStatus(OrderStatus.PENDING);
-        order.setRecipientName(request.recipientName());
-        order.setStreet(request.street());
-        order.setPostalCode(request.postalCode());
-        order.setCity(request.city());
-        order.setCountry(request.country());
+        Order order = createOrder(request, user);
+
+        addOrderItemsAndUpdateStock(cartItems, order);
 
         order = orderRepository.save(order);
-        log.info("Created new order id={} for userId={}", order.getId(), user.getId());
+        cartItemRepository.deleteAll(cartItems);
+        log.info("Checkout completed for orderId={} with {} items", order.getId(), order.getItems().size());
 
+        Order finalOrder = order;
+        return orderRepository.findById(order.getId())
+                .map(OrderMapper::toDto)
+                .orElseThrow(() -> {
+                    log.error("Order not found after checkout id={}", finalOrder.getId());
+                    return new OrderNotFoundException(finalOrder.getId());
+                });
+    }
+
+    private void addOrderItemsAndUpdateStock(List<CartItem> cartItems, Order order) {
         for (CartItem cartItem : cartItems) {
             Product product = cartItem.getProduct();
             OrderItem orderItem = new OrderItem();
@@ -88,18 +93,22 @@ public class OrderService {
             log.debug("Added orderItem productId={} qty={} to orderId={}",
                     product.getId(), cartItem.getQuantity(), order.getId());
         }
+    }
+
+    private Order createOrder(CheckoutOrderDto request, User user) {
+        Order order = new Order();
+        order.setUser(user);
+        order.setCreatedAt(LocalDateTime.now());
+        order.setStatus(OrderStatus.PENDING);
+        order.setRecipientName(request.recipientName());
+        order.setStreet(request.street());
+        order.setPostalCode(request.postalCode());
+        order.setCity(request.city());
+        order.setCountry(request.country());
 
         order = orderRepository.save(order);
-        cartItemRepository.deleteAll(cartItems);
-        log.info("Checkout completed for orderId={} with {} items", order.getId(), order.getItems().size());
-
-        Order finalOrder = order;
-        return orderRepository.findById(order.getId())
-                .map(OrderMapper::toDto)
-                .orElseThrow(() -> {
-                    log.error("Order not found after checkout id={}", finalOrder.getId());
-                    return new OrderNotFoundException(finalOrder.getId());
-                });
+        log.info("Created new order id={} for userId={}", order.getId(), user.getId());
+        return order;
     }
 
     public List<OrderDto> getOrdersForCurrentUser() {
