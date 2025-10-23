@@ -1,28 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-// Typedefs fra backend DTO-er
-export interface OrderItemDto {
-  id: number;
-  productId: number;
-  productName: string;
-  quantity: number;
-  price: number;
-}
-
-export interface OrderDto {
-  id: number;
-  userId: number;
-  createdAt: string; // ISO datetime
-  status: string;
-
-  recipientName: string;
-  street: string;
-  postalCode: string;
-  city: string;
-  country: string;
-
-  items: OrderItemDto[];
-}
+import { OrderDto, OrderItemDto } from "../types/Order";
 
 /**
  * Opprett en ny ordre basert på handlekurven (checkout)

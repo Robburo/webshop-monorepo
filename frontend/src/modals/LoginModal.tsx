@@ -19,8 +19,11 @@ export default function LoginModal({ open, onClose }: LoginModalProps) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     try {
-      const token = await loginApi(username, password);
-      await login(token);
+      const { token, refreshToken } = await loginApi(username, password);
+    localStorage.setItem("jwt", token);
+    localStorage.setItem("refreshToken", refreshToken);
+
+    await login(token);
       setError("");
       setUsername("");
       setPassword("");

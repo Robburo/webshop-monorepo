@@ -1,19 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-// Typedefs som matcher backend DTO-er
-export interface CartItemResponseDto {
-  id: number;
-  productId: number;
-  productName: string;
-  quantity: number;
-  userId: number;
-  price: number; // backend BigDecimal → JSON number
-}
-
-export interface CartItemCreateDto {
-  productId: number;
-  quantity: number;
-}
+import { CartItemCreateDto, CartItemResponseDto } from "../types/Cart";
 
 /**
  * Hent alle cart items for innlogget bruker

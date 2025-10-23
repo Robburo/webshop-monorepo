@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { getCurrentUser, UserResponseDto } from "@/services/userApi";
+import { getCurrentUser } from "@/services/userApi";
+import { UserResponseDto } from "@/types/User";
 import { useRouter } from "next/navigation";
 
 interface AuthContextType {

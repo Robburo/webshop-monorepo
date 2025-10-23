@@ -1,23 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-// Typedefs fra backend DTO-er
-export interface ProductResponseDto {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
-  categoryId: number;
-  categoryName: string;
-}
-
-export interface ProductRequestDto {
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
-  categoryId: number;
-}
+import { ProductRequestDto, ProductResponseDto } from "../types/Product";
 
 /**
  * Hent alle produkter

@@ -1,14 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-// Typedefs fra backend DTO-er
-export interface CategoryResponseDto {
-  id: number;
-  name: string;
-}
-
-export interface CategoryCreateDto {
-  name: string;
-}
+import { CategoryResponseDto, CategoryCreateDto } from "@/types/Category";
 
 /**
  * Hent alle kategorier

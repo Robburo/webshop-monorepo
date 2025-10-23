@@ -1,19 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-// Typedefs fra backend DTO-er
-export interface UserRequestDto {
-  username: string;
-  email: string;
-  password: string;
-  role?: string; // optional, settes ofte av backend
-}
-
-export interface UserResponseDto {
-  id: number;
-  username: string;
-  email: string;
-  role: string;
-}
+import { UserRequestDto, UserResponseDto } from "@/types/User";
 
 /**
  * Registrer en ny bruker (åpent endepunkt)

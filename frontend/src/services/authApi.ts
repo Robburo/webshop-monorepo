@@ -1,9 +1,5 @@
 import { apiFetch } from "./apiClient";
-
-interface TokenPairResponse {
-  token: string;
-  refreshToken: string;
-}
+import { TokenPairResponse } from "@/types/Auth";
 
 /**
  * Logg inn med username/password og hent JWT-token
