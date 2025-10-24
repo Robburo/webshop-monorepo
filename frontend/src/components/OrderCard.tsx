@@ -1,4 +1,5 @@
-import { OrderDto, updateOrderStatus } from "@/services/orderApi";
+import { updateOrderStatus } from "@/services/orderApi";
+import { OrderDto } from "@/types/Order";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 

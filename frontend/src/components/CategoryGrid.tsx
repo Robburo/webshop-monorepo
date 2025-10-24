@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  getAllCategories,
-  CategoryResponseDto,
-} from "@/services/categoryApi";
+import { getAllCategories } from "@/services/categoryApi";
+import { CategoryResponseDto } from "@/types/Category";
 import Link from "next/link";
 
 export default function CategoryGrid() {

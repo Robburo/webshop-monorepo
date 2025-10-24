@@ -5,11 +5,11 @@ import {
   clearCart,
   updateCartItem,
   removeCartItem,
-  CartItemResponseDto,
 } from "@/services/cartApi";
 import CartItem from "./CartItem";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { CartItemResponseDto } from "@/types/Cart";
 
 export default function Cart() {
   const [cart, setCart] = useState<CartItemResponseDto[]>([]);
@@ -48,12 +48,12 @@ export default function Cart() {
   }
 
   async function handleCheckoutCart() {
-  try {
-    router.push("/checkout/delivery");
-  } catch (err) {
-    console.error("Kunne ikke gå til checkout", err);
+    try {
+      router.push("/checkout/delivery");
+    } catch (err) {
+      console.error("Kunne ikke gå til checkout", err);
+    }
   }
-}
 
   // Debounced oppdatering av antall
   function handleUpdateQuantity(itemId: number, newQuantity: number) {

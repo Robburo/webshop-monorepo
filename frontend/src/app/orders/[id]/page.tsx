@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { getOrderById, OrderDto } from "@/services/orderApi";
+import { getOrderById } from "@/services/orderApi";
+import { OrderDto } from "@/types/Order";
 
 export default function OrderDetailsPage() {
   const params = useParams();

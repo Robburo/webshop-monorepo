@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { ProductResponseDto, getProductById } from "@/services/productApi";
+import { getProductById } from "@/services/productApi";
 import { addToCart } from "@/services/cartApi";
 import toast from "react-hot-toast";
 import ProductDetail from "@/components/ProductDetail";
+import { ProductResponseDto } from "@/types/Product";
 
 export default function ProductPage() {
   const { id } = useParams();

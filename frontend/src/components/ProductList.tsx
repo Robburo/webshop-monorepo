@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { getAllProducts, ProductResponseDto } from "@/services/productApi";
+import { getAllProducts } from "@/services/productApi";
+import { ProductResponseDto } from "@/types/Product";
 import ProductCard from "./ProductCard";
 import SearchBar from "./SearchBar";
 
@@ -40,10 +41,10 @@ export default function ProductList() {
       </h2>
       <div className="p-6 flex justify-center">
         <SearchBar
-        value={query}
-        onChange={setQuery}
-        placeholder="Søk etter produkter..."
-      />
+          value={query}
+          onChange={setQuery}
+          placeholder="Søk etter produkter..."
+        />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 min-h-[200px]">
         {filteredProducts.length > 0 ? (

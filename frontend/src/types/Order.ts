@@ -36,3 +36,10 @@ export interface OrderDto {
 
   items: OrderItemDto[];
 }
+
+export interface OrderResponseDto {
+  id: number;
+  createdAt: string;
+  status: string;
+  items: { id: number; productName: string; quantity: number; price: number }[];
+}

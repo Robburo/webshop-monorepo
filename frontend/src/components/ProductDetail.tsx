@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductResponseDto } from "@/services/productApi";
+import { ProductResponseDto } from "@/types/Product";
 import { useAuth } from "@/hooks/useAuth";
 
 interface Props {

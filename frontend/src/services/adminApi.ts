@@ -1,35 +1,8 @@
 import { apiFetch } from "./apiClient";
-
-// --- Typedefs ---
-export interface UserResponseDto {
-  id: number;
-  username: string;
-  email: string;
-  role: string;
-}
-
-export interface CartItemResponseDto {
-  id: number;
-  productId: number;
-  productName: string;
-  quantity: number;
-  userId: number;
-}
-
-export interface OrderResponseDto {
-  id: number;
-  createdAt: string;
-  status: string;
-  items: { id: number; productName: string; quantity: number; price: number }[];
-}
-
-export interface ProductRequestDto {
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
-  categoryId?: number;
-}
+import { UserResponseDto } from "@/types/User";
+import { CartItemResponseDto } from "@/types/Cart";
+import { OrderResponseDto } from "@/types/Order";
+import { ProductRequestDto } from "@/types/Product";
 
 export interface ProductResponseDto extends ProductRequestDto {
   id: number;

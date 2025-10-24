@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getCurrentUser, UserResponseDto } from "@/services/userApi";
+import { getCurrentUser } from "@/services/userApi";
+import { UserResponseDto } from "@/types/User";
 
 export default function Profile() {
   const [user, setUser] = useState<UserResponseDto | null>(null);

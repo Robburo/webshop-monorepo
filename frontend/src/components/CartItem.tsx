@@ -1,4 +1,4 @@
-import { CartItemResponseDto } from "@/services/cartApi";
+import { CartItemResponseDto } from "@/types/Cart";
 
 interface Props {
   item: CartItemResponseDto;

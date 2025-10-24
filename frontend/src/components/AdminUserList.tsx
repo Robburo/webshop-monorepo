@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getAllUsers, UserResponseDto } from "@/services/adminApi";
+import { getAllUsers} from "@/services/adminApi";
 import { getCurrentUser } from "@/services/userApi";
+import { UserResponseDto } from "@/types/User";
 
 export default function AdminUserList() {
   const [users, setUsers] = useState<UserResponseDto[]>([]);

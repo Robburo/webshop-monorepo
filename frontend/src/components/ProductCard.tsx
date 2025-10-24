@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ProductResponseDto } from "@/services/productApi";
+import { ProductResponseDto } from "@/types/Product";
 
 interface Props {
   product: ProductResponseDto;

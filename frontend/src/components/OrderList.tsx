@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getOrdersForUser, OrderDto } from "@/services/orderApi";
+import { getOrdersForUser } from "@/services/orderApi";
+import { OrderDto } from "@/types/Order";
 import OrderCard from "./OrderCard";
 
 export default function OrderList() {
