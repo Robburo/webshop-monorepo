@@ -27,8 +27,8 @@ public class RateLimitFilter implements Filter {
     private Bucket createNewBucket() {
         return Bucket.builder()
                 .addLimit(limit -> limit
-                        .capacity(3) // maximum number of tokens
-                        .refillIntervally(50, Duration.ofMinutes(1)) // tokens per minute
+                        .capacity(100) // maximum number of tokens
+                        .refillIntervally(100, Duration.ofMinutes(1)) // tokens per minute
                 )
                 .build();
     }
