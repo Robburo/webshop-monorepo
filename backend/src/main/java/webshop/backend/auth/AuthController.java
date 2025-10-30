@@ -43,7 +43,7 @@ public class AuthController {
                 .toList();
 
         String jwt = jwtService.generateToken(username, roles);
-        String refreshToken = jwtService.generateRefreshToken(username);
+        String refreshToken = jwtService.generateRefreshToken(username, roles);
         return ResponseEntity.ok(new TokenPairResponse(jwt, refreshToken));
     }
 

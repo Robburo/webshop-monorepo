@@ -50,10 +50,11 @@ public class JwtService {
                 .getBody();
     }
 
-    public String generateRefreshToken(String username) {
+    public String generateRefreshToken(String username, List<String> roles) {
         return Jwts.builder()
                 .setSubject(username)
                 .claim("type", "refresh")
+                .claim("roles", roles)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration * 24))
                 .signWith(key)
