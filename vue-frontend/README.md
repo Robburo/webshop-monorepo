@@ -1,75 +1,77 @@
-# Nuxt Minimal Starter
+# Webshop Vue Frontend
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Modern **Vue 3 + Nuxt 4 + TailwindCSS 3** frontend for the Webshop API.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## ⚙️ Tech Stack
+
+* Vue 3.5
+* Nuxt 4.2
+* TailwindCSS 3.4
+* Pinia 3 (state management)
+* Axios for backend communication
+* Vue Toastification for notifications
+* Vue Router 4.6
+
+---
+
+## 🚀 Run Locally
 
 ```bash
-# npm
+cd vue-frontend
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Frontend runs at **[http://localhost:3000](http://localhost:3000)**
 
-Build the application for production:
+---
+
+## 🧠 Folder Structure
+
+```
+components/
+layouts/
+pages/
+services/
+composables/
+stores/
+```
+
+---
+
+## ⚡ Environment Variables
+
+Create `.env`:
 
 ```bash
-# npm
+API_BASE_URL=http://localhost:8080/api
+```
+
+---
+
+## 🧰 Build for Production
+
+```bash
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 📦 Dependency Summary
+
+```
+@nuxtjs/tailwindcss@6.14.0
+@pinia/nuxt@0.11.2
+autoprefixer@10.4.21
+axios@1.13.1
+nuxt@4.2.0
+pinia@3.0.3
+postcss@8.5.6
+tailwindcss@3.4.18
+vue@3.5.22
+vue-router@4.6.3
+vue-toastification@2.0.0-rc.5
+```

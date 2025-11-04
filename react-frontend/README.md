@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Webshop React Frontend
 
-## Getting Started
+Modern **React 19 + Next.js 15 + TailwindCSS 4** frontend for the Webshop API.
 
-First, run the development server:
+---
+
+## ⚙️ Tech Stack
+
+* React 19
+* Next.js 15
+* TypeScript 5.9
+* TailwindCSS 4.1
+* Fetch API for backend communication
+* React Hot Toast (notifications)
+* ESLint 9 (with Next config)
+
+---
+
+## 🚀 Run Locally
 
 ```bash
+cd react-frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Frontend runs at **[http://localhost:3000](http://localhost:3000)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Folder Structure
 
-## Learn More
+```
+src/
+├── components/
+├── pages/
+├── hooks/
+├── services/
+└── styles/
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚡ Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create `.env.local`:
 
-## Deploy on Vercel
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:8080/api
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Dependency Summary
+
+```
+@eslint/eslintrc@3.3.1
+@tailwindcss/postcss@4.1.16
+autoprefixer@10.4.21
+eslint-config-next@15.5.4
+eslint@9.39.1
+next@15.5.4
+react@19.1.0
+react-dom@19.1.0
+react-hot-toast@2.6.0
+tailwindcss@4.1.16
+typescript@5.9.3
+@types/node@20.19.24
+@types/react@19.2.2
+@types/react-dom@19.2.2
+```
